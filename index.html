@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)file:///C:/Users/reuss/Downloads/index_12.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroMoodBox — Quel est ton blocage émotionnel ?</title>
+<meta name="description" content="Découvre en 2 minutes pourquoi tu te sens bloquée. Diagnostic astro émotionnel personnalisé.">
+<meta property="og:title" content="Mon diagnostic AstroMoodBox ✦">
+<meta property="og:description" content="J&#39;ai découvert mon blocage émotionnel caché. Fais le test — résultat immédiat.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --bg:      #07050f;
+  --s1:      #110e22;
+  --s2:      #1c1838;
+  --v:       #9d93f0;   /* violet principal — assez clair sur fond sombre */
+  --vd:      #6257c4;   /* violet foncé pour gradients */
+  --vtext:   #1a1535;   /* texte sur fond violet */
+  --g:       #c49a14;
+  --gl:      #e8b84a;
+  --gtext:   #2a1f00;   /* texte sur fond or */
+  --cr:      #ede5d0;   /* crème — texte principal */
+  --cr2:     #c4bba8;   /* crème atténuée — texte secondaire */
+  --cr3:     #8a8070;   /* crème muted — texte tertiaire */
+  --bv:      rgba(157,147,240,.22);  /* border violet repos */
+  --bvh:     rgba(157,147,240,.65);  /* border violet hover */
+  --bg-opt:  rgba(157,147,240,.08);  /* fond option repos */
+  --bg-oph:  rgba(157,147,240,.18);  /* fond option hover */
+  --bg-ops:  rgba(157,147,240,.25);  /* fond option selected */
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--cr);
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 22% 44%,rgba(255,255,255,.32) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 7%,rgba(255,255,255,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 54% 58%,rgba(255,255,255,.28) 0%,transparent 100%),
+    radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.45) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 80% 70%,rgba(255,255,255,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 90% 38%,rgba(255,255,255,.38) 0%,transparent 100%),
+    radial-gradient(1px 1px at 14% 80%,rgba(255,255,255,.42) 0%,transparent 100%),
+    radial-gradient(1px 1px at 60% 90%,rgba(255,255,255,.28) 0%,transparent 100%);
+  pointer-events:none;z-index:0;
+}
+
+/* ── SCREENS ── */
+.screen{display:none;min-height:100vh;position:relative;z-index:1;flex-direction:column;align-items:center;}
+.screen.on{display:flex;}
+
+/* ── NAV ── */
+.nav{width:100%;padding:22px 20px 0;display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;}
+.nav-moons{font-size:18px;letter-spacing:.5em;color:var(--v);opacity:.7;}
+.nav-name{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--cr3);font-family:'DM Sans',sans-serif;}
+
+/* ── WRAP ── */
+.wrap{width:100%;max-width:460px;padding:0 22px 80px;margin:0 auto;}
+
+/* ════════════════════════════════
+   LANDING
+════════════════════════════════ */
+#s-land{justify-content:center;text-align:center;}
+#s-land .wrap{padding-top:0;}
+
+.orb{
+  width:150px;height:150px;border-radius:50%;
+  background:radial-gradient(circle at 38% 38%,#1e1845,#08051a);
+  border:1px solid rgba(157,147,240,.3);
+  display:flex;align-items:center;justify-content:center;
+  margin:40px auto 32px;position:relative;
+  animation:pulse 4s ease-in-out infinite;
+}
+.orb::before{content:'';position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(157,147,240,.1);animation:spin 10s linear infinite;}
+.orb-glyph{font-size:50px;filter:drop-shadow(0 0 16px rgba(157,147,240,.45));}
+@keyframes pulse{0%,100%{box-shadow:0 0 30px rgba(157,147,240,.12);}50%{box-shadow:0 0 50px rgba(157,147,240,.22);}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.land-eye{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);margin-bottom:14px;font-weight:400;}
+.land-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(32px,7vw,46px);font-weight:300;line-height:1.15;color:var(--cr);margin-bottom:16px;}
+.land-h1 em{font-style:italic;color:var(--gl);}
+.land-sub{font-size:14px;color:var(--cr2);margin-bottom:32px;max-width:320px;margin-left:auto;margin-right:auto;}
+
+.btn-start{
+  display:inline-block;padding:15px 36px;
+  background:linear-gradient(135deg,var(--v),var(--vd));
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  border:none;border-radius:2px;cursor:pointer;transition:all .25s;
+}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(157,147,240,.38);}
+
+.trust{display:flex;gap:18px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
+.trust span{font-size:11px;color:var(--cr3);display:flex;align-items:center;gap:5px;}
+.trust span::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--g);flex-shrink:0;}
+
+/* ════════════════════════════════
+   QUIZ
+════════════════════════════════ */
+#s-quiz{padding:0 22px 80px;}
+.quiz-box{width:100%;max-width:460px;margin:0 auto;}
+
+/* Progress */
+.prog-wrap{margin:24px 0 32px;}
+.prog-track{height:2px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--v),var(--g));border-radius:1px;transition:width .55s cubic-bezier(.4,0,.2,1);}
+.prog-phases{display:flex;justify-content:space-between;margin-top:8px;}
+.prog-phase{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,229,208,.28);transition:color .3s;}
+.prog-phase.on{color:var(--v);}
+
+/* Steps */
+.step{display:none;animation:fadein .35s ease;}
+.step.on{display:block;}
+@keyframes fadein{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+.step-phase{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);margin-bottom:12px;display:flex;align-items:center;gap:8px;opacity:.8;}
+.step-phase::before{content:'';width:14px;height:1px;background:currentColor;}
+.step-q{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,5vw,28px);font-weight:300;line-height:1.25;color:var(--cr);margin-bottom:6px;}
+.step-hint{font-size:12px;color:var(--cr3);margin-bottom:24px;line-height:1.5;}
+
+/* Options — WCAG AA fixes */
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{
+  width:100%;padding:13px 16px;
+  background:var(--bg-opt);
+  border:1px solid var(--bv);
+  border-radius:3px;
+  /* WCAG: texte crème #ede5d0 sur fond rgba(157,147,240,.08) ≈ #0e0b1e → ratio ~10:1 ✓ */
+  color:var(--cr);
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;
+  text-align:left;cursor:pointer;
+  transition:background .18s,border-color .18s,transform .18s;
+  display:flex;align-items:flex-start;gap:12px;
+}
+/* Hover: fond plus visible, texte INCHANGÉ → reste lisible */
+.opt:hover{
+  background:var(--bg-oph);
+  border-color:var(--bvh);
+  transform:translateX(3px);
+  color:var(--cr); /* explicite — pas de changement */
+}
+/* Selected: fond violet, texte BLANC PUR → ratio ~9:1 ✓ */
+.opt.sel{
+  background:var(--bg-ops);
+  border-color:var(--v);
+  color:#ffffff;
+}
+.opt-ico{font-size:17px;flex-shrink:0;margin-top:2px;line-height:1;}
+.opt-main{display:block;font-size:14px;color:inherit;line-height:1.4;}
+.opt-sub{display:block;font-size:11px;color:rgba(255,255,255,.55);margin-top:2px;line-height:1.4;}
+.opt.sel .opt-sub{color:rgba(255,255,255,.65);}
+.opt:not(.sel) .opt-sub{color:var(--cr3);}
+
+/* Sign grid */
+.sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.sign-btn{
+  padding:11px 12px;
+  background:var(--bg-opt);border:1px solid var(--bv);border-radius:3px;
+  color:var(--cr);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;
+  cursor:pointer;transition:background .18s,border-color .18s;
+  display:flex;align-items:center;gap:9px;text-align:left;
+}
+.sign-btn:hover{background:var(--bg-oph);border-color:var(--bvh);color:var(--cr);}
+.sign-btn.sel{background:var(--bg-ops);border-color:var(--v);color:#fff;}
+.sign-btn.sel .sign-dates{color:rgba(255,255,255,.6);}
+.sign-sym{font-size:16px;flex-shrink:0;}
+.sign-name{display:block;font-size:13px;color:inherit;}
+.sign-dates{display:block;font-size:10px;color:var(--cr3);margin-top:1px;}
+
+/* Scale */
+.scale-track{display:flex;gap:6px;margin:8px 0 6px;}
+.scale-btn{
+  flex:1;padding:13px 4px;
+  /* fond repos : ratio texte var(--cr2) #c4bba8 sur #0e0b1e ≈ 8:1 ✓ */
+  background:var(--bg-opt);border:1px solid var(--bv);border-radius:3px;
+  color:var(--cr2);font-size:15px;font-weight:400;font-family:'DM Sans',sans-serif;
+  cursor:pointer;transition:background .15s,border-color .15s,color .15s;text-align:center;
+}
+.scale-btn:hover{background:var(--bg-oph);border-color:var(--bvh);color:var(--cr);}
+/* Selected scale: fond violet, texte BLANC → ratio ~9:1 ✓ */
+.scale-btn.sel{background:var(--v);border-color:var(--v);color:#ffffff;font-weight:500;}
+.scale-labels{display:flex;justify-content:space-between;}
+.scale-lbl{font-size:10px;color:var(--cr3);}
+
+/* Next btn (scales only) */
+.btn-next{
+  display:none;width:100%;margin-top:16px;
+  padding:14px 24px;
+  background:linear-gradient(135deg,var(--v),var(--vd));
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  border:none;border-radius:2px;cursor:pointer;transition:all .22s;
+}
+.btn-next.show{display:block;animation:fadein .25s ease;}
+.btn-next:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(157,147,240,.35);}
+
+/* Phase divider */
+.p-div{display:flex;align-items:center;gap:12px;margin:8px 0 24px;}
+.p-div-line{flex:1;height:1px;background:rgba(255,255,255,.06);}
+.p-div-glyph{font-size:10px;color:rgba(237,229,208,.18);letter-spacing:.25em;}
+
+/* ════════════════════════════════
+   FREE RESULT
+════════════════════════════════ */
+#s-free{text-align:center;}
+
+.free-wrap{max-width:460px;width:100%;margin:0 auto;padding:0 22px 80px;}
+
+.free-badge{
+  display:inline-block;padding:6px 18px;margin:24px 0 18px;
+  border:1px solid rgba(196,154,20,.35);border-radius:1px;
+  font-size:11px;letter-spacing:.18em;color:var(--gl);text-transform:uppercase;
+}
+.free-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(24px,5vw,32px);font-weight:300;line-height:1.2;color:var(--cr);margin-bottom:28px;}
+
+/* Profile card */
+.profile-card{
+  background:var(--s1);border:1px solid rgba(157,147,240,.2);border-radius:4px;
+  padding:20px 18px;margin-bottom:12px;text-align:left;
+}
+.profile-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--v);margin-bottom:10px;font-weight:400;}
+.profile-traits{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.trait{
+  padding:4px 11px;border-radius:99px;
+  /* fond violet foncé — texte crème : ratio ~7:1 ✓ */
+  background:rgba(157,147,240,.15);
+  border:1px solid rgba(157,147,240,.3);
+  font-size:12px;color:var(--cr);
+}
+.profile-mantra{
+  font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-style:italic;
+  color:var(--gl);margin-top:10px;line-height:1.5;
+  border-left:2px solid var(--g);padding-left:12px;
+}
+
+/* Blocage card */
+.block-card{
+  background:var(--s1);border:1px solid rgba(157,147,240,.2);border-radius:4px;
+  padding:20px 18px;margin-bottom:12px;text-align:left;position:relative;
+}
+.block-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--v),var(--vd));border-radius:4px 0 0 4px;}
+.block-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--v);margin-bottom:8px;}
+.block-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:400;color:var(--cr);margin-bottom:6px;line-height:1.3;}
+.block-body{font-size:13px;color:var(--cr2);line-height:1.7;}
+
+/* Intensity mini */
+.intensity-card{
+  background:var(--s1);border:1px solid rgba(157,147,240,.2);border-radius:4px;
+  padding:16px 18px;margin-bottom:20px;text-align:left;
+}
+.int-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--v);margin-bottom:10px;}
+.int-caption{font-size:11px;color:var(--cr3);line-height:1.5;margin:-2px 0 9px;font-style:italic;}
+.profile-portrait{font-size:14px;color:var(--cr2);line-height:1.75;margin-bottom:10px;}
+.block-friction{font-size:13px;color:var(--v);margin-top:10px;line-height:1.6;font-style:italic;border-top:1px solid rgba(157,147,240,.15);padding-top:10px;}
+.int-row{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
+.int-name{font-size:12px;color:var(--cr2);min-width:130px;}
+.int-track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.int-fill{height:100%;border-radius:2px;background:var(--v);}
+.int-fill.gold{background:var(--g);}
+.int-fill.low{background:#4fc38a;}
+
+/* Share row */
+.share-row{display:flex;gap:10px;margin-bottom:20px;}
+.btn-share{
+  flex:1;padding:12px;
+  background:transparent;border:1px solid rgba(196,154,20,.35);border-radius:2px;
+  color:var(--gl);font-size:12px;font-family:'DM Sans',sans-serif;
+  cursor:pointer;transition:background .2s;letter-spacing:.04em;
+}
+.btn-share:hover{background:rgba(196,154,20,.1);color:var(--gl);}
+
+/* Paywall teaser */
+.paywall-card{
+  background:var(--s1);border:1px solid rgba(157,147,240,.2);border-radius:4px;
+  padding:20px 18px;margin-bottom:18px;text-align:left;
+  position:relative;overflow:hidden;
+}
+.paywall-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:90px;
+  background:linear-gradient(transparent,var(--s1));
+  pointer-events:none;
+}
+.paywall-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cr3);margin-bottom:10px;}
+.paywall-locked-item{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:13px;color:var(--cr2);
+}
+.paywall-locked-item:last-child{border-bottom:none;}
+.lock-ico{font-size:14px;flex-shrink:0;opacity:.5;}
+.paywall-lock-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:16px 18px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:12px;color:var(--cr3);
+  z-index:2;
+}
+
+/* Price & CTA */
+.price-row{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px 0 14px;}
+.price-num{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:300;color:var(--gl);line-height:1;}
+.price-meta p{font-size:13px;color:var(--cr);}
+.price-meta small{font-size:11px;color:var(--cr3);}
+
+.btn-unlock{
+  display:block;width:100%;padding:17px 28px;
+  background:linear-gradient(135deg,var(--g),#8a6500);
+  /* texte très sombre sur fond or → ratio ~9:1 ✓ */
+  color:#1a0f00;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  border:none;border-radius:2px;cursor:pointer;text-align:center;
+  text-decoration:none;transition:all .25s;
+}
+.btn-unlock:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(196,154,20,.35);background:linear-gradient(135deg,var(--gl),var(--g));color:#1a0f00;}
+.secure{font-size:11px;color:var(--cr3);margin-top:10px;text-align:center;}
+
+/* ════════════════════════════════
+   FULL RESULT (post-Stripe)
+════════════════════════════════ */
+#s-result{padding:0 22px 100px;}
+.res-box{width:100%;max-width:560px;margin:0 auto;}
+.res-header{text-align:center;padding:40px 0 32px;}
+.thanks-banner{text-align:center;padding:14px 20px;background:rgba(196,154,20,.08);border:1px solid rgba(196,154,20,.2);border-radius:3px;margin:24px 0 0;font-size:13px;color:var(--gl);letter-spacing:.04em;}
+.res-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gl);margin-bottom:10px;}
+.res-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,6vw,42px);font-weight:300;line-height:1.15;color:var(--cr);margin-bottom:6px;}
+.res-sign{display:inline-block;padding:7px 20px;margin-top:10px;border:1px solid rgba(196,154,20,.3);border-radius:1px;font-size:11px;letter-spacing:.2em;color:var(--gl);text-transform:uppercase;}
+
+.div{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--v),transparent);margin:30px auto;}
+
+.rcard{background:var(--s1);border:1px solid rgba(157,147,240,.18);border-radius:4px;padding:24px 20px;margin-bottom:12px;position:relative;}
+.rcard::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--v),var(--vd));border-radius:4px 0 0 4px;}
+.rcard.gold::before{background:linear-gradient(180deg,var(--gl),var(--g));}
+.rlbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--v);margin-bottom:8px;font-weight:400;}
+.rcard.gold .rlbl{color:var(--gl);}
+.rtitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-weight:400;color:var(--cr);margin-bottom:8px;line-height:1.3;}
+.rbody{font-size:13px;color:var(--cr2);line-height:1.75;}
+
+/* Meters full */
+.meters{display:flex;flex-direction:column;gap:11px;margin-top:4px;}
+.m-row{display:flex;align-items:center;gap:10px;}
+.m-lbl{font-size:12px;color:var(--cr2);min-width:130px;}
+.m-track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.m-fill{height:100%;border-radius:2px;background:var(--v);}
+.m-fill.g{background:var(--g);}
+.m-fill.gr{background:#4fc38a;}
+.m-val{font-size:11px;color:var(--cr3);min-width:28px;text-align:right;}
+
+/* Alert box */
+.alert-box{background:rgba(226,75,74,.1);border:1px solid rgba(226,75,74,.25);border-radius:4px;padding:14px 16px;margin-top:12px;font-size:13px;color:#f4a8a8;line-height:1.65;}
+.alert-box strong{display:block;margin-bottom:4px;color:#f7c1c1;font-weight:500;}
+
+/* Ritual steps */
+.rsteps{display:flex;flex-direction:column;gap:13px;margin-top:4px;}
+.rstep{display:flex;gap:12px;align-items:flex-start;}
+.snum{min-width:25px;height:25px;border-radius:50%;border:1px solid rgba(157,147,240,.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--v);flex-shrink:0;margin-top:2px;}
+.stxt{font-size:13px;color:var(--cr2);line-height:1.6;}
+
+/* Affirmations */
+.affs{display:flex;flex-direction:column;gap:9px;margin-top:4px;}
+.aff{padding:12px 14px;border-left:2px solid var(--g);background:rgba(196,154,20,.07);border-radius:0 3px 3px 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:300;font-style:italic;color:var(--gl);line-height:1.45;}
+
+/* Week */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px;}
+.day{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:7px 3px;text-align:center;}
+.day-n{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--cr3);margin-bottom:3px;}
+.day-t{font-size:10px;color:var(--cr2);line-height:1.3;}
+.day.hi{border-color:var(--v);background:rgba(157,147,240,.12);}
+.day.hi .day-t{color:var(--v);}
+
+/* Share section */
+.share-sec{text-align:center;margin-top:40px;padding:26px 18px;background:var(--s1);border:1px solid rgba(196,154,20,.25);border-radius:4px;}
+.share-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;color:var(--cr);margin-bottom:6px;}
+.share-s{font-size:12px;color:var(--cr3);margin-bottom:14px;}
+.share-cta{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;border:1px solid rgba(196,154,20,.3);border-radius:2px;color:var(--gl);font-size:13px;background:transparent;cursor:pointer;transition:background .2s;font-family:'DM Sans',sans-serif;}
+.share-cta:hover{background:rgba(196,154,20,.1);}
+
+/* ── FOOTER ── */
+.site-footer{width:100%;border-top:1px solid rgba(255,255,255,.06);padding:24px 22px 28px;text-align:center;position:relative;z-index:2;margin-top:auto;}
+.footer-links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin:8px 0 12px;}
+.footer-brand{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:rgba(157,147,240,.5);margin-bottom:8px;}
+.footer-link{font-size:12px;color:var(--cr3);cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif;font-weight:300;padding:0;transition:color .18s;}
+.footer-link:hover{color:var(--cr2);}
+.footer-copy{font-size:11px;color:rgba(122,114,144,.4);}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(7,5,15,.93);overflow-y:auto;}
+.modal-overlay.open{display:block;}
+.modal-box{max-width:540px;margin:40px auto 80px;background:#110e22;border:1px solid rgba(157,147,240,.18);border-radius:8px;padding:28px 24px;position:relative;}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--cr3);font-size:24px;cursor:pointer;line-height:1;padding:4px;}
+.modal-close:hover{color:var(--cr2);}
+.modal-tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);margin-bottom:10px;}
+.modal-title{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:300;color:var(--cr);margin-bottom:18px;line-height:1.2;}
+.modal-body{font-size:13px;color:var(--cr2);line-height:1.8;}
+.modal-body h3{font-size:14px;font-weight:500;color:var(--cr);margin:16px 0 5px;}
+.modal-body h3:first-child{margin-top:0;}
+.modal-body p{margin-bottom:9px;}
+.modal-body a{color:var(--v);}
+.modal-body ul{padding-left:16px;margin-bottom:9px;}
+.modal-body ul li{margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ LANDING ══════════════ -->
+<div id="s-land" class="screen on">
+  <nav class="nav"><div class="nav-moons">☽ ◉ ☾</div><div class="nav-name">AstroMoodBox</div></nav>
+  <div class="wrap" style="text-align:center;padding-top:0;">
+    <div class="orb"><span class="orb-glyph">✦</span></div>
+    <p class="land-eye">Diagnostic astro émotionnel</p>
+    <h1 class="land-h1">Pourquoi tu te sens <em>bloquée</em> en ce moment</h1>
+    <p class="land-sub">9 questions · 2 minutes · Résultat immédiat et gratuit</p>
+    <button class="btn-start" onclick="go(&#39;s-quiz&#39;)">Découvrir mon blocage →</button>
+    <div class="trust">
+      <span>Confidentiel</span>
+      <span>Astrologie karmique</span>
+      <span>Résultat immédiat</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ QUIZ ══════════════ -->
+<div id="s-quiz" class="screen">
+  <nav class="nav"><div class="nav-moons">☽ ◉ ☾</div><div class="nav-name">AstroMoodBox</div></nav>
+  <div class="quiz-box" style="padding:0 22px 80px;width:100%;max-width:460px;margin:0 auto;">
+    <div class="prog-wrap">
+      <div class="prog-track"><div class="prog-fill" id="bar" style="width:11%"></div></div>
+      <div class="prog-phases">
+        <span class="prog-phase on" id="ph1">Ton signe</span>
+        <span class="prog-phase" id="ph2">Ce que tu vis</span>
+        <span class="prog-phase" id="ph3">Ce dont tu as besoin</span>
+      </div>
+    </div>
+
+    <!-- Q1 SIGNE -->
+    <div class="step on" id="q1">
+      <p class="step-phase">Pour commencer</p>
+      <h2 class="step-q">Quel est ton signe ?</h2>
+      <p class="step-hint">La base de tout ton diagnostic.</p>
+      <div class="sign-grid">
+        <button class="sign-btn" onclick="pSign(&#39;belier&#39;,&#39;♈&#39;,&#39;Feu&#39;,&#39;Mars&#39;);aN(2)"><span class="sign-sym">♈</span><span><span class="sign-name">Bélier</span><span class="sign-dates">21 mars – 19 avr</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;taureau&#39;,&#39;♉&#39;,&#39;Terre&#39;,&#39;Vénus&#39;);aN(2)"><span class="sign-sym">♉</span><span><span class="sign-name">Taureau</span><span class="sign-dates">20 avr – 20 mai</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;gemeaux&#39;,&#39;♊&#39;,&#39;Air&#39;,&#39;Mercure&#39;);aN(2)"><span class="sign-sym">♊</span><span><span class="sign-name">Gémeaux</span><span class="sign-dates">21 mai – 20 juin</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;cancer&#39;,&#39;♋&#39;,&#39;Eau&#39;,&#39;Lune&#39;);aN(2)"><span class="sign-sym">♋</span><span><span class="sign-name">Cancer</span><span class="sign-dates">21 juin – 22 juil</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;lion&#39;,&#39;♌&#39;,&#39;Feu&#39;,&#39;Soleil&#39;);aN(2)"><span class="sign-sym">♌</span><span><span class="sign-name">Lion</span><span class="sign-dates">23 juil – 22 août</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;vierge&#39;,&#39;♍&#39;,&#39;Terre&#39;,&#39;Mercure&#39;);aN(2)"><span class="sign-sym">♍</span><span><span class="sign-name">Vierge</span><span class="sign-dates">23 août – 22 sept</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;balance&#39;,&#39;♎&#39;,&#39;Air&#39;,&#39;Vénus&#39;);aN(2)"><span class="sign-sym">♎</span><span><span class="sign-name">Balance</span><span class="sign-dates">23 sept – 22 oct</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;scorpion&#39;,&#39;♏&#39;,&#39;Eau&#39;,&#39;Pluton&#39;);aN(2)"><span class="sign-sym">♏</span><span><span class="sign-name">Scorpion</span><span class="sign-dates">23 oct – 21 nov</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;sagittaire&#39;,&#39;♐&#39;,&#39;Feu&#39;,&#39;Jupiter&#39;);aN(2)"><span class="sign-sym">♐</span><span><span class="sign-name">Sagittaire</span><span class="sign-dates">22 nov – 21 déc</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;capricorne&#39;,&#39;♑&#39;,&#39;Terre&#39;,&#39;Saturne&#39;);aN(2)"><span class="sign-sym">♑</span><span><span class="sign-name">Capricorne</span><span class="sign-dates">22 déc – 19 jan</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;verseau&#39;,&#39;♒&#39;,&#39;Air&#39;,&#39;Uranus&#39;);aN(2)"><span class="sign-sym">♒</span><span><span class="sign-name">Verseau</span><span class="sign-dates">20 jan – 18 fév</span></span></button>
+        <button class="sign-btn" onclick="pSign(&#39;poissons&#39;,&#39;♓&#39;,&#39;Eau&#39;,&#39;Neptune&#39;);aN(2)"><span class="sign-sym">♓</span><span><span class="sign-name">Poissons</span><span class="sign-dates">19 fév – 20 mars</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q2 DOMAINE -->
+    <div class="step" id="q2">
+      <p class="step-phase">Ton univers</p>
+      <h2 class="step-q">Où est-ce que ça coince le plus ?</h2>
+      <p class="step-hint">La première réponse qui vient est souvent la vraie.</p>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;amour&#39;);aN(3)"><span class="opt-ico">♡</span><span><span class="opt-main">L'amour et mes relations</span><span class="opt-sub">Liens, schémas qui se répètent, manque de connexion</span></span></button>
+        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;travail&#39;);aN(3)"><span class="opt-ico">◇</span><span><span class="opt-main">Mon travail et ma vie financière</span><span class="opt-sub">Stagnation, perte de sens, pression</span></span></button>
+        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;soi&#39;);aN(3)"><span class="opt-ico">◯</span><span><span class="opt-main">Ma relation à moi-même</span><span class="opt-sub">Confiance, énergie, identité</span></span></button>
+        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;famille&#39;);aN(3)"><span class="opt-ico">△</span><span><span class="opt-main">Ma famille ou mes proches</span><span class="opt-sub">Liens difficiles, blessures, distance</span></span></button>
+        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;sens&#39;);aN(3)"><span class="opt-ico">✦</span><span><span class="opt-main">Le sens de ma vie</span><span class="opt-sub">Vocation, direction, spiritualité</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q3 HUMEUR -->
+    <div class="step" id="q3">
+      <div class="p-div"><div class="p-div-line"></div><div class="p-div-glyph">✦ ✦ ✦</div><div class="p-div-line"></div></div>
+      <p class="step-phase">Ce que tu ressens</p>
+      <h2 class="step-q">Si tu devais mettre un seul mot sur ce que tu traverses…</h2>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;vide&#39;);aN(4)"><span class="opt-ico">🌫</span><span><span class="opt-main">Vide</span><span class="opt-sub">Je tourne en rond, plus d'élan</span></span></button>
+        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;anxieuse&#39;);aN(4)"><span class="opt-ico">🌊</span><span><span class="opt-main">Anxieuse</span><span class="opt-sub">Mon esprit s'emballe, je n'arrive plus à me poser</span></span></button>
+        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;perdue&#39;);aN(4)"><span class="opt-ico">🌑</span><span><span class="opt-main">Perdue</span><span class="opt-sub">Je ne sais plus qui je suis ni ce que je veux</span></span></button>
+        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;triste&#39;);aN(4)"><span class="opt-ico">🌧</span><span><span class="opt-main">Triste</span><span class="opt-sub">Un poids que je n'arrive pas à mettre de côté</span></span></button>
+        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;bloquee&#39;);aN(4)"><span class="opt-ico">⚡</span><span><span class="opt-main">Bloquée</span><span class="opt-sub">Je vois ce que je veux mais quelque chose m'en empêche</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q4 INTENSITÉ (scale) -->
+    <div class="step" id="q4">
+      <p class="step-phase">L'intensité</p>
+      <h2 class="step-q">À quel point est-ce que ça pèse en ce moment ?</h2>
+      <p class="step-hint">1 = légère gêne &nbsp;·&nbsp; 5 = vraiment difficile à porter</p>
+      <div class="scale-track">
+        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,1,this,&#39;q4&#39;)">1</button>
+        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,2,this,&#39;q4&#39;)">2</button>
+        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,3,this,&#39;q4&#39;)">3</button>
+        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,4,this,&#39;q4&#39;)">4</button>
+        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,5,this,&#39;q4&#39;)">5</button>
+      </div>
+      <div class="scale-labels"><span class="scale-lbl">Légère gêne</span><span class="scale-lbl">Très difficile</span></div>
+      <button class="btn-next" id="next4" onclick="aN(5)">Continuer →</button>
+    </div>
+
+    <!-- Q5 SOURCE -->
+    <div class="step" id="q5">
+      <p class="step-phase">La source</p>
+      <h2 class="step-q">Honnêtement… d'où vient ce blocage selon toi ?</h2>
+      <p class="step-hint">Choisis ce qui résonne, même si c'est inconfortable.</p>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;peur&#39;);aN(6)"><span class="opt-ico">😰</span><span><span class="opt-main">La peur</span><span class="opt-sub">De rater, d'être rejetée, de ne pas être à la hauteur</span></span></button>
+        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;sabotage&#39;);aN(6)"><span class="opt-ico">🌀</span><span><span class="opt-main">Moi-même</span><span class="opt-sub">Je sais ce que je dois faire, mais je m'en empêche</span></span></button>
+        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;sens&#39;);aN(6)"><span class="opt-ico">🌫</span><span><span class="opt-main">Le manque de sens</span><span class="opt-sub">Je ne vois plus pourquoi je fais tout ça</span></span></button>
+        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;surcharge&#39;);aN(6)"><span class="opt-ico">🧠</span><span><span class="opt-main">La surcharge</span><span class="opt-sub">Trop de tout — je suis submergée</span></span></button>
+        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;blessure&#39;);aN(6)"><span class="opt-ico">💔</span><span><span class="opt-main">Une blessure non-guérie</span><span class="opt-sub">Quelque chose du passé qui continue de peser</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q6 CLARTÉ -->
+    <div class="step" id="q6">
+      <p class="step-phase">Ta vision intérieure</p>
+      <h2 class="step-q">Tu es dans le brouillard… ou tu vois clairement mais tu restes bloquée ?</h2>
+      <p class="step-hint">1 = brouillard total &nbsp;·&nbsp; 5 = je vois, mais je reste coincée</p>
+      <div class="scale-track">
+        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,1,this,&#39;q6&#39;)">1</button>
+        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,2,this,&#39;q6&#39;)">2</button>
+        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,3,this,&#39;q6&#39;)">3</button>
+        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,4,this,&#39;q6&#39;)">4</button>
+        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,5,this,&#39;q6&#39;)">5</button>
+      </div>
+      <div class="scale-labels"><span class="scale-lbl">Brouillard total</span><span class="scale-lbl">Je vois, mais bloquée</span></div>
+      <button class="btn-next" id="next6" onclick="aN(7)">Continuer →</button>
+    </div>
+
+    <!-- Q7 BESOIN -->
+    <div class="step" id="q7">
+      <div class="p-div"><div class="p-div-line"></div><div class="p-div-glyph">✦ ✦ ✦</div><div class="p-div-line"></div></div>
+      <p class="step-phase">Ce dont tu as besoin</p>
+      <h2 class="step-q">Si tu pouvais ressentir une seule chose dès ce soir…</h2>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;need&#39;,&#39;paix&#39;);aN(8)"><span class="opt-ico">🌿</span><span><span class="opt-main">De la paix</span><span class="opt-sub">Un silence intérieur, enfin</span></span></button>
+        <button class="opt" onclick="sv(&#39;need&#39;,&#39;force&#39;);aN(8)"><span class="opt-ico">💪</span><span><span class="opt-main">De la force et de la confiance</span><span class="opt-sub">Me sentir capable, solide, à ma place</span></span></button>
+        <button class="opt" onclick="sv(&#39;need&#39;,&#39;clarte&#39;);aN(8)"><span class="opt-ico">💡</span><span><span class="opt-main">De la clarté</span><span class="opt-sub">Voir où je vais, enfin comprendre</span></span></button>
+        <button class="opt" onclick="sv(&#39;need&#39;,&#39;amour&#39;);aN(8)"><span class="opt-ico">❤️</span><span><span class="opt-main">De l'amour et de la connexion</span><span class="opt-sub">Sentir que je ne suis pas seule</span></span></button>
+        <button class="opt" onclick="sv(&#39;need&#39;,&#39;sens&#39;);aN(8)"><span class="opt-ico">✨</span><span><span class="opt-main">Du sens</span><span class="opt-sub">Retrouver une raison de me lever le matin</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q8 RESSOURCE -->
+    <div class="step" id="q8">
+      <p class="step-phase">Ta façon de te reconnecter</p>
+      <h2 class="step-q">Qu'est-ce qui t'a déjà aidée, même un peu ?</h2>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;silence&#39;);aN(9)"><span class="opt-ico">🌿</span><span><span class="opt-main">Le silence et la solitude</span><span class="opt-sub">Me retrouver seule, respirer, me poser</span></span></button>
+        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;ecriture&#39;);aN(9)"><span class="opt-ico">✍️</span><span><span class="opt-main">Écrire ce que je ressens</span><span class="opt-sub">Les mots m'aident à y voir plus clair</span></span></button>
+        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;corps&#39;);aN(9)"><span class="opt-ico">🎵</span><span><span class="opt-main">Bouger, danser, me dépenser</span><span class="opt-sub">Mon corps évacue ce que ma tête retient</span></span></button>
+        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;rituel&#39;);aN(9)"><span class="opt-ico">🕯</span><span><span class="opt-main">Les rituels et le spirituel</span><span class="opt-sub">Bougie, méditation, me reconnecter à quelque chose de plus grand</span></span></button>
+      </div>
+    </div>
+
+    <!-- Q9 OBJECTIF -->
+    <div class="step" id="q9">
+      <p class="step-phase">Dernière question</p>
+      <h2 class="step-q">Si une seule chose changeait dès demain… ce serait quoi ?</h2>
+      <p class="step-hint">Laisse venir la réponse instinctive.</p>
+      <div class="opts">
+        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;energie&#39;);finish()"><span class="opt-ico">⚡</span><span><span class="opt-main">Retrouver de l'énergie</span><span class="opt-sub">Ne plus me sentir à plat</span></span></button>
+        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;affirmer&#39;);finish()"><span class="opt-ico">💬</span><span><span class="opt-main">M'affirmer et oser m'exprimer</span><span class="opt-sub">Dire ce que je pense, prendre ma place</span></span></button>
+        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;sereine&#39;);finish()"><span class="opt-ico">🧘</span><span><span class="opt-main">Me sentir enfin sereine</span><span class="opt-sub">Sans cette tension permanente</span></span></button>
+        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;clarte&#39;);finish()"><span class="opt-ico">💡</span><span><span class="opt-main">Voir clair sur ce que je veux</span><span class="opt-sub">Avoir une direction, un cap</span></span></button>
+        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;connexion&#39;);finish()"><span class="opt-ico">💞</span><span><span class="opt-main">Sentir plus d'amour et de connexion</span><span class="opt-sub">Dans mes relations, ou avec moi-même</span></span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FREE RESULT ══════════════ -->
+<div id="s-free" class="screen">
+  <nav class="nav"><div class="nav-moons">☽ ◉ ☾</div><div class="nav-name">AstroMoodBox</div></nav>
+  <div class="free-wrap">
+    <p class="land-eye" style="margin-top:24px;">Ton résultat gratuit</p>
+    <div class="free-badge" id="f-badge">— ♌ Lion —</div>
+    <h2 class="free-h">Voici ce que ton énergie révèle</h2>
+
+    <!-- Profil -->
+    <div class="profile-card">
+      <p class="profile-lbl">✦ Ton profil astrologique</p>
+      <p class="profile-portrait" id="f-portrait"></p>
+      <p class="profile-mantra" id="f-mantra"></p>
+    </div>
+
+    <!-- Blocage principal (gratuit) -->
+    <div class="block-card">
+      <p class="block-lbl">✦ Ton blocage principal</p>
+      <h3 class="block-title" id="f-block-title"></h3>
+      <p class="block-body" id="f-block-body"></p>
+      <p class="block-friction" id="f-friction"></p>
+    </div>
+
+    <!-- Intensité (3 jauges gratuites) -->
+    <div class="intensity-card">
+      <p class="int-lbl">✦ Ton intensité émotionnelle</p>
+      <div class="int-row"><span class="int-name">Charge émotionnelle</span><div class="int-track"><div class="int-fill" id="f-g1"></div></div></div>
+      <p class="int-caption" id="f-c1"></p>
+      <div class="int-row"><span class="int-name">Clarté intérieure</span><div class="int-track"><div class="int-fill low" id="f-g2"></div></div></div>
+      <p class="int-caption" id="f-c2"></p>
+      <div class="int-row"><span class="int-name">Élan vital</span><div class="int-track"><div class="int-fill gold" id="f-g3"></div></div></div>
+      <p class="int-caption" id="f-c3"></p>
+    </div>
+
+    <!-- Share (avant paywall) -->
+    <div class="share-row">
+      <button class="btn-share" onclick="doShareFree()">✦ Partager mon résultat</button>
+    </div>
+
+    <!-- Paywall -->
+    <div class="paywall-card">
+      <p class="paywall-lbl">Ton rapport complet débloque aussi…</p>
+      <div class="paywall-locked-item"><span class="lock-ico">🔐</span> La raison karmique cachée de ton blocage</div>
+      <div class="paywall-locked-item"><span class="lock-ico">🔐</span> Tes tensions intérieures détaillées</div>
+      <div class="paywall-locked-item"><span class="lock-ico">🔐</span> Ton rituel de libération personnalisé (ce soir)</div>
+      <div class="paywall-locked-item"><span class="lock-ico">🔐</span> Programme de libération 7 jours</div>
+      <div class="paywall-locked-item"><span class="lock-ico">🔐</span> 3 affirmations de reconditionnement</div>
+      <div class="paywall-lock-overlay">🔐 Réservé au rapport complet</div>
+    </div>
+
+    <div class="price-row">
+      <div class="price-num">6,90€</div>
+      <div class="price-meta"><p>Rapport complet · Accès immédiat</p><small>Paiement unique · Sécurisé Stripe</small></div>
+    </div>
+
+    <a id="stripe-btn" href="https://buy.stripe.com/cNi14mbay8p8cXdf0Q5c400" class="btn-unlock" onclick="return guardStripe()">Débloquer mon rapport complet →</a>
+    <p class="secure">🔒 Stripe · Accès instantané · Aucun abonnement</p>
+  </div>
+</div>
+
+<!-- ══════════════ FULL RESULT ══════════════ -->
+<div id="s-result" class="screen">
+  <nav class="nav"><div class="nav-moons">☽ ◉ ☾</div><div class="nav-name">AstroMoodBox</div></nav>
+  <div class="res-box">
+    <p class="thanks-banner">Merci pour ta confiance ✦ Ton diagnostic est prêt.</p>
+    <div class="res-header">
+      <p class="res-eyebrow">Ton diagnostic complet</p>
+      <h1 class="res-title" id="r-title">Diagnostic</h1>
+      <div class="res-sign" id="r-sign">✦</div>
+    </div>
+    <div class="div"></div>
+
+    <div class="rcard"><p class="rlbl">01 · Profil astrologique</p><h2 class="rtitle" id="r-prof-t"></h2><p class="rbody" id="r-prof-b"></p><div class="profile-traits" id="r-traits" style="margin-top:12px;"></div><p class="profile-mantra" id="r-mantra" style="margin-top:12px;"></p></div>
+    <div class="rcard"><p class="rlbl">02 · Ton blocage principal</p><h2 class="rtitle" id="r-bl-t"></h2><p class="rbody" id="r-bl-b"></p></div>
+    <div class="rcard"><p class="rlbl">03 · Tes tensions intérieures</p><div class="meters" id="r-meters"></div></div>
+    <div class="rcard"><p class="rlbl">04 · La raison karmique</p><h2 class="rtitle" id="r-k-t"></h2><p class="rbody" id="r-k-b"></p><div class="alert-box" id="r-alert" style="margin-top:12px;"></div></div>
+    <div class="rcard gold"><p class="rlbl">05 · Ton rituel de libération</p><h2 class="rtitle" id="r-rit-t"></h2><div class="rsteps" id="r-rit-s"></div></div>
+    <div class="rcard gold"><p class="rlbl">06 · Tes 3 affirmations</p><div class="affs" id="r-affs"></div></div>
+    <div class="rcard gold"><p class="rlbl">07 · Programme 7 jours</p><h2 class="rtitle" id="r-prog-t"></h2><div class="week" id="r-week"></div></div>
+    <div class="rcard"><p class="rlbl">08 · Ta fiche signe complète</p><div id="r-fiche"></div></div>
+
+    <div class="share-sec">
+      <h3 class="share-h">Tu as aimé ton diagnostic ?</h3>
+      <p class="share-s">Partage avec une amie qui en a besoin ✨</p>
+      <button class="share-cta" onclick="doShareFull()">✦ Partager mon diagnostic</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── DATA ── */
+const D = { sign:'lion', sym:'♌', elem:'Feu', plan:'Soleil',
+            mood:'vide', domain:'soi', intensity:3, clarity:3,
+            block_type:'sens', need:'paix', ritual_style:'silence', goal:'sereine' };
+
+const SIGNS = {
+  belier:{n:'Bélier',sym:'♈',el:'Feu',pl:'Mars',type:'Cardinal',traits:['Audacieux','Passionné','Franc','Énergique','Leader','Spontané','Confiant'],mantra:"J'avance sans peur, guidé par ma flamme intérieure.",forces:'Leadership, courage, initiative',ombres:'Impulsivité, impatience, ego blessé'},
+  taureau:{n:'Taureau',sym:'♉',el:'Terre',pl:'Vénus',type:'Fixe',traits:['Patient','Loyal','Réaliste','Ancré','Fidèle','Endurant','Sensuel'],mantra:"Je m'ancre dans le présent, je savoure la beauté simple.",forces:'Constance, sensualité, fiabilité',ombres:'Rigidité, entêtement, matérialisme'},
+  gemeaux:{n:'Gémeaux',sym:'♊',el:'Air',pl:'Mercure',type:'Mutable',traits:['Vif','Curieux','Sociable','Adaptable','Communicatif','Léger','Astucieux'],mantra:"Je danse avec les idées, ma curiosité éclaire les horizons.",forces:'Adaptabilité, intelligence, communication',ombres:'Dispersion, superficialité, inconstance'},
+  cancer:{n:'Cancer',sym:'♋',el:'Eau',pl:'Lune',type:'Cardinal',traits:['Empathique','Loyal','Doux','Sensible','Protecteur','Attentif','Réceptif'],mantra:"Je protège, je ressens, j'aime avec profondeur.",forces:'Intuition, empathie, loyauté profonde',ombres:'Hypersensibilité, anxiété, repli sur soi'},
+  lion:{n:'Lion',sym:'♌',el:'Feu',pl:'Soleil',type:'Fixe',traits:['Charismatique','Généreux','Fidèle','Créatif','Protecteur','Passionné','Loyal'],mantra:"Je rayonne avec confiance et force.",forces:'Leadership créatif, générosité, loyauté absolue',ombres:'Besoin de reconnaissance, orgueil, difficulté à recevoir'},
+  vierge:{n:'Vierge',sym:'♍',el:'Terre',pl:'Mercure',type:'Mutable',traits:['Analytique','Méthodique','Attentif','Fiable','Humble','Précis','Serviable'],mantra:"Je sers avec dévouement et discernement.",forces:'Précision, dévouement, sens du détail',ombres:'Perfectionnisme, auto-critique, anxiété'},
+  balance:{n:'Balance',sym:'♎',el:'Air',pl:'Vénus',type:'Cardinal',traits:['Diplomate','Équitable','Charmant','Artistique','Sociable','Idéaliste','Raffiné'],mantra:"Je crée l'harmonie et la beauté autour de moi.",forces:'Diplomatie, sens de la justice, charme naturel',ombres:'Indécision, dépendance affective, évitement du conflit'},
+  scorpion:{n:'Scorpion',sym:'♏',el:'Eau',pl:'Pluton',type:'Fixe',traits:['Intense','Déterminé','Passionné','Perspicace','Loyal','Magnétique','Profond'],mantra:"Je transforme, je ressens, je renais toujours plus fort.",forces:'Profondeur émotionnelle, transformation, intuition',ombres:'Jalousie, méfiance, obsession'},
+  sagittaire:{n:'Sagittaire',sym:'♐',el:'Feu',pl:'Jupiter',type:'Mutable',traits:['Optimiste','Aventurier','Philosophe','Enthousiaste','Libre','Direct','Généreux'],mantra:"Je cherche, j'explore, ma liberté est ma force.",forces:'Optimisme, philosophie, quête de vérité',ombres:'Impatience, manque de tact, instabilité'},
+  capricorne:{n:'Capricorne',sym:'♑',el:'Terre',pl:'Saturne',type:'Cardinal',traits:['Ambitieux','Responsable','Patient','Structuré','Réaliste','Endurant','Loyal'],mantra:"Je construis avec patience et vision.",forces:'Persévérance, discipline, vision long terme',ombres:'Rigidité, froideur, workaholisme'},
+  verseau:{n:'Verseau',sym:'♒',el:'Air',pl:'Uranus',type:'Fixe',traits:['Original','Visionnaire','Indépendant','Idéaliste','Humaniste','Audacieux','Libre'],mantra:"Je pense autrement. Ma vision du futur ouvre les chemins.",forces:'Originalité, vision, indépendance',ombres:'Détachement, rébellion, idéalisme excessif'},
+  poissons:{n:'Poissons',sym:'♓',el:'Eau',pl:'Neptune',type:'Mutable',traits:['Sensible','Intuitif','Créatif','Empathique','Mystique','Doux','Réceptif'],mantra:"Je ressens au-delà des mots. Mon intuition est mon guide.",forces:'Intuition, créativité, empathie profonde',ombres:'Évasion, flou des limites, hypersensibilité'},
+};
+
+const ELEM = {
+  Feu:   {adj:'ardente',force:'créatrice',don:'la passion',ombre:'l\'impulsivité'},
+  Terre: {adj:'ancrée', force:'constructrice',don:'la constance',ombre:'la rigidité'},
+  Air:   {adj:'vive',   force:'mentale',don:'la clarté',ombre:'la dispersion'},
+  Eau:   {adj:'sensible',force:'intuitive',don:'l\'empathie',ombre:'la fusion'},
+};
+
+/* ── RULE ENGINE ── */
+function getBlockTitle(bt, mood, domain, sname) {
+  const m={
+    peur:     {amour:`La peur de l'abandon qui s'est installée en toi`,travail:`La peur d'échouer qui te paralyse`,soi:`La peur du regard des autres qui t'emprisonne`,famille:`La peur du conflit qui t'étouffe`,sens:`La peur de choisir la mauvaise voie`},
+    sabotage: {amour:`Tu t'empêches de recevoir l'amour que tu mérites`,travail:`Tu sabotes tes propres efforts sans le vouloir`,soi:`Une part de toi résiste à ton propre épanouissement`,famille:`Tu maintiens une distance qui te protège mais t'isole`,sens:`Tu repousses l'appel de ta vraie voie`},
+    sens:     {amour:`Tu as perdu le fil de ce que tu veux vraiment en amour`,travail:`Tu fais ce qu'il faut faire, mais plus ce qui t'appelle`,soi:`Tu existes pour les autres, plus vraiment pour toi`,famille:`Les liens familiaux te prennent ton énergie sans te nourrir`,sens:`Tu cherches quelque chose que les mots ne savent pas encore nommer`},
+    surcharge: {amour:`Tu donnes trop sans te laisser recevoir`,travail:`Tu portes tout, seule, jusqu'à l'épuisement`,soi:`Ton énergie s'est épuisée à tout gérer`,famille:`Tu es le pilier de tout le monde — mais qui est là pour toi ?`,sens:`Trop de directions à la fois te laissent immobile`},
+    blessure:  {amour:`Une blessure ancienne colore tous tes liens aujourd'hui`,travail:`Une déception passée t'empêche de faire confiance à nouveau`,soi:`Tu te punis encore pour quelque chose qui n'était pas ta faute`,famille:`Une blessure non-dite continue de faire mal en silence`,sens:`Quelque chose s'est cassé en toi et tu ne sais plus comment le réparer`},
+  };
+  return (m[bt]||m.sens)[domain]||(m[bt]||m.sens).soi;
+}
+
+function getBlockBody(bt, elem, mood, domain) {
+  const t = ELEM[elem]||ELEM.Feu;
+  const bodies = {
+    peur: `Ton énergie ${t.adj} et ${t.force} est naturellement tournée vers l'avant. Mais la peur s'est glissée en toi comme un filtre invisible — elle transforme chaque opportunité en menace potentielle, chaque élan en danger à éviter. Ce n'est pas une faiblesse. C'est une protection qui a été utile, mais qui aujourd'hui te coûte plus qu'elle ne t'aide. Ta force — ${t.don} — attend de pouvoir se déployer sans cette armure.`,
+    sabotage: `Il y a en toi une partie qui veut avancer, et une autre qui freine sans explication rationnelle. C'est l'auto-sabotage — le schéma le plus courant chez les natures ${t.adj}es. Tu es souvent plus proche du but que tu ne le crois, mais quelque chose en toi crée des obstacles pour éviter une réussite qui fait peur autant qu'elle est désirée. ${t.ombre} te joue ici un rôle subtil mais puissant.`,
+    sens: `L'énergie ${t.force} de ton signe a un besoin fondamental : du sens. Sans sens, même les succès sonnent creux. Tu fais les gestes, tu remplis les cases, tu assures — mais l'étincelle s'est éteinte quelque part. Ce vide n'est pas un manque de motivation. C'est ton âme qui te dit que quelque chose doit changer de direction.`,
+    surcharge: `Ton énergie ${t.adj} est immense — c'est pour ça qu'on te confie beaucoup. Trop. Tu as pris l'habitude de porter, de gérer, d'anticiper. Et aujourd'hui le réservoir est vide. Ce n'est pas un manque de courage ou de volonté. C'est simplement le signal que tu as donné bien au-delà de ce que tu as reçu en retour.`,
+    blessure: `Quelque chose du passé continue de teinter ton présent d'une couleur que tu n'as pas choisie. Cette blessure non-guérie agit comme un prisme — elle déforme ce que tu perçois, elle influence tes choix sans que tu t'en rendes compte. Ton énergie ${t.adj} mérite d'être libérée de ce poids ancien pour retrouver sa pleine puissance.`,
+  };
+  return bodies[bt]||bodies.sens;
+}
+
+function getKarmic(bt, duration, elem, sign) {
+  const t = ELEM[elem]||ELEM.Feu;
+  const isSchema = duration==='schema';
+  const depth = isSchema ? 'karmiquement ancré et répétitif' : 'récent mais porteur d\'un enseignement';
+  const karmics = {
+    peur: { t:`La peur comme héritage — apprendre la confiance`, b:`Ce que tu vis est ${depth}. Karmiquement, les âmes ${t.adj}es portent souvent une mémoire de situations où la confiance a été trahie — dans cette vie ou dans d'autres. La peur que tu ressens aujourd'hui n'est pas irrationnelle : elle a été construite couche par couche par des expériences réelles. Dans cette vie, ${sign.pl} t'invite à apprendre que la confiance n'est pas naïveté — c'est la forme la plus courageuse d'ouverture.` },
+    sabotage: { t:`L'auto-sabotage comme protection ancienne`, b:`L'auto-sabotage est ${depth}. Il a commencé comme une protection — pour ne pas trop s'exposer, pour ne pas décevoir, pour rester dans un espace connu et sûr. Karmiquement, ton âme ${t.adj} apprend dans cette vie que rester petite ne te protège pas — ça t'empêche juste d'être toi. ${t.ombre} est le mécanisme. La leçon est d'apprendre à te choisir toi-même.` },
+    sens: { t:`La quête de sens comme mission d'âme`, b:`Ce vide de sens est ${depth}. Karmiquement, les âmes portées par l'énergie de ${sign.el} ont souvent une mission précise dans cette vie — non pas de réussir selon les standards habituels, mais de trouver et de suivre leur propre fil. La perte de sens que tu ressens est en réalité un appel : ton âme réclame d'être réalignée avec ce pourquoi elle est vraiment venue.` },
+    surcharge: { t:`La surcharge comme leçon de réception`, b:`Cette surcharge est ${depth}. Karmiquement, les natures ${t.adj}es ont souvent appris que leur valeur était liée à ce qu'elles accomplissent pour les autres. Cette croyance ancienne les pousse à donner sans limites — jusqu'à l'épuisement. Dans cette vie, ${sign.pl} t'invite à apprendre que recevoir est aussi sacré que donner. Ta valeur n'est pas dans ta performance.` },
+    blessure: { t:`La blessure comme porte d'accès à ta profondeur`, b:`Cette blessure est ${depth}. Karmiquement, les blessures non-guéries agissent comme des aimants — elles attirent des situations et des personnes qui répètent le schéma original, jusqu'à ce que l'âme soit prête à le regarder en face et à le libérer. Ce n'est pas une punition. C'est une invitation. Ton énergie ${t.adj} est suffisamment forte pour traverser cette guérison.` },
+  };
+  return karmics[bt]||karmics.sens;
+}
+
+function getAlert(pattern, bt) {
+  const alerts = {
+    peur: 'Remarque si tu évites systématiquement les situations qui pourraient bien se passer — parfois la peur de réussir est aussi puissante que la peur d\'échouer.',
+    sabotage: 'Observe le moment exact où tu crées un obstacle. Il y a souvent une pensée juste avant : "ça va trop bien" ou "je ne mérite pas ça".',
+    sens: 'Attention aux distractions qui remplissent le vide sans le guérir — réseaux sociaux, suractivité, relations peu nourrissantes.',
+    surcharge: 'Remarque combien de fois tu dis oui quand tu veux dire non. C\'est souvent là que tout commence.',
+    blessure: 'Si tu reconnais des schémas répétitifs dans tes relations, c\'est la blessure qui parle — pas la réalité de ce que tu mérites.',
+  };
+  return alerts[bt]||alerts.sens;
+}
+
+function getRitual(rs, need, elem) {
+  const rituals = {
+    silence: {
+      t:'Rituel du retour à soi — dans le silence',
+      steps:['Ce soir, trouve 15 minutes de solitude absolue. Téléphone éteint, pièce calme.',
+             'Assieds-toi confortablement. Pose une main sur ton cœur. Ferme les yeux.',
+             'Respire lentement : 4 temps inspirés, 6 expirés. Répète 6 fois. Observe le calme qui s\'installe.',
+             'Demande intérieurement : "Qu\'est-ce dont j\'ai le plus besoin en ce moment ?" Écoute sans juger.',
+             'Note sur un papier ce qui a émergé. C\'est ton signal intérieur. Honore-le demain.']
+    },
+    ecriture: {
+      t:'Rituel de la page blanche libératrice',
+      steps:['Prends un carnet ou une feuille blanche. Mets-toi dans un endroit où tu ne seras pas dérangée.',
+             'Pose cette question en haut de la page : "Ce que je n\'ai jamais osé dire à voix haute sur ce que je vis..."',
+             'Écris sans censure pendant 10 minutes. Tout ce qui vient. Sans relire, sans juger.',
+             'Une fois terminée, plie la feuille. Tu peux la garder, la brûler ou la déchirer — l\'acte libère autant que les mots.',
+             'Remarque comment tu te sens dans ton corps après. C\'est ça, la libération par l\'écriture.']
+    },
+    corps: {
+      t:'Rituel de libération par le mouvement',
+      steps:['Mets une musique qui t\'émeut ou qui te donne de l\'énergie — selon ce dont tu as besoin.',
+             'Mets-toi debout, pieds nus sur le sol si possible. Ferme les yeux.',
+             'Laisse ton corps bouger librement pendant 5 minutes — pas de danse apprise, juste le corps qui exprime.',
+             'Puis assieds-toi. Respire profondément 5 fois. Sens le contact de tes pieds avec le sol.',
+             'Dis à voix haute : "Je libère ce qui ne m\'appartient plus. Je suis ancrée ici, maintenant."']
+    },
+    rituel: {
+      t:'Rituel de la bougie et de l\'intention',
+      steps:['Allume une bougie dans une pièce tamisée. Choisis une couleur qui te parle — blanc pour la clarté, violet pour la transformation, or pour l\'énergie.',
+             'Assieds-toi face à la flamme. Regarde-la pendant 1 minute sans décrocher le regard.',
+             'Dis à voix haute ce que tu veux libérer : "Je libère [ce qui pèse]. Je m\'autorise [ce dont j\'ai besoin]."',
+             'Reste en silence 5 minutes, les yeux fermés, en imaginant la fumée emporter ce qui t\'alourdit.',
+             'Souffle la bougie lentement en formulant une intention claire pour les 7 prochains jours.']
+    },
+  };
+  return rituals[rs]||rituals.silence;
+}
+
+function getAffs(need, bt) {
+  const map = {
+    paix_peur:     ['Je suis en sécurité dans le moment présent.','La paix est un état que je peux choisir, maintenant.','Je pose les peurs qui ne m\'appartiennent plus.'],
+    paix_sabotage: ['Je me choisis, doucement mais sûrement.','Ma tranquillité intérieure n\'a pas besoin de permission.','Je pose les armes contre moi-même.'],
+    paix_sens:     ['Je fais confiance au silence — il porte les réponses.','Ma paix intérieure est ma boussole.','Je n\'ai pas besoin de tout comprendre pour être bien.'],
+    paix_surcharge:['Je m\'accorde le droit de ne rien faire.','Recevoir est aussi sacré que donner.','Ma paix vaut plus que leur approbation.'],
+    paix_blessure: ['Je me libère doucement de ce qui a fait mal.','La paix que je cherche existe déjà en moi.','Je n\'ai pas à porter le passé dans le présent.'],
+    force_peur:    ['Je suis plus forte que mes peurs.','Je me lève malgré la peur — c\'est ça le courage.','Ma force intérieure est plus grande que ce qui me fait trembler.'],
+    force_sabotage:['Je mérite de réussir autant que d\'essayer.','Je me soutiens au lieu de me saboter.','Chaque pas en avant compte, même imparfait.'],
+    force_sens:    ['Je construis une vie qui a du sens pour moi.','Ma force vient de ce qui m\'appelle vraiment.','Je suis capable de me réaligner avec ma vérité.'],
+    force_surcharge:['Je peux faire beaucoup en prenant soin de moi d\'abord.','Ma force se recharge dans le repos.','Je délègue ce qui ne m\'appartient pas.'],
+    force_blessure:['J\'ai traversé des choses difficiles. Je suis toujours là.','Ma blessure ne définit pas ma valeur.','Je suis capable de guérir et de m\'épanouir.'],
+    clarte_peur:   ['La clarté vient quand je cesse de fuir ce que je ressens.','Je vois les choses comme elles sont, pas comme je les crains.','Je fais confiance à mon discernement.'],
+    clarte_sabotage:['Je vois mes schémas. Je peux les changer.','La clarté est une chose que je me donne à moi-même.','Je regarde mon blocage en face — c\'est déjà le guérir à moitié.'],
+    clarte_sens:   ['Je n\'ai pas besoin de tout voir pour avancer d\'un pas.','Ma direction se révèle quand j\'ose l\'écouter.','Ce qui m\'appelle est réel, même si je ne le vois pas encore clairement.'],
+    clarte_surcharge:['Je simplifie. Je clarifie. Je priorise ce qui compte.','La clarté vient quand je décide de ne pas tout porter.','Je vois mieux quand je pose certaines choses.'],
+    clarte_blessure:['Je commence à voir cette blessure différemment.','La clarté me permet de comprendre sans me condamner.','Je comprends mieux d\'où je viens — et où je veux aller.'],
+    amour_peur:    ['Je mérite l\'amour sans avoir à le mériter.','Je m\'ouvre à la connexion sans me protéger de tout.','Je suis digne d\'être vraiment vue et aimée.'],
+    amour_sabotage:['Je m\'aime assez pour ne plus me saboter.','Je choisis des personnes qui me font du bien.','L\'amour vrai commence par moi.'],
+    amour_sens:    ['Je me connecte à ce qui me nourrit vraiment.','L\'amour que je cherche, je commence par me l\'offrir.','Je suis entière, ici, maintenant.'],
+    amour_surcharge:['Je reçois l\'amour aussi naturellement que je le donne.','Être aimée ne demande pas de tout donner.','Je suis choisie pour ce que je suis, pas pour ce que je fais.'],
+    amour_blessure:['Ma blessure passée ne définit pas ce que je mérite aujourd\'hui.','Je m\'ouvre à l\'amour à mon rythme.','Je suis capable d\'aimer et d\'être aimée pleinement.'],
+    sens_peur:     ['Mon chemin est unique et il m\'appartient.','Je fais confiance à ce qui m\'appelle, même si ça fait peur.','Le sens de ma vie se construit pas à pas.'],
+    sens_sabotage: ['Je me permets de suivre ce qui me fait vibrer.','Mon chemin a du sens même s\'il est différent.','Je cesse de me mettre en travers de ma propre voie.'],
+    sens_sens:     ['Le sens n\'est pas à trouver — il est à créer.','Je renoue avec ce qui me donne de l\'élan.','Ma vie a du sens quand je vis en accord avec mes valeurs.'],
+    sens_surcharge:['Je reviens à l\'essentiel. Ce qui compte vraiment.','Mon sens de la vie ne dépend pas de ma productivité.','Je retrouve du sens en ralentissant.'],
+    sens_blessure: ['Ma blessure n\'efface pas le sens de mon parcours.','Je transforme cette épreuve en enseignement.','Ma vie a du sens, même dans les moments difficiles.'],
+  };
+  const key = (D.need||'paix')+'_'+(D.block_type||'sens');
+  return map[key]||['Je me libère de ce qui ne me ressemble plus.','J\'avance à mon rythme, avec bienveillance.','Je suis exactement là où je dois être.'];
+}
+
+function getWeek(goal, domain) {
+  const programs = {
+    energie:  [{n:'Lun',t:'10 min marche'},{n:'Mar',t:'Une vraie pause'},{n:'Mer',t:'Coucher tôt'},{n:'Jeu',t:'Déléguer 1 chose'},{n:'Ven',t:'Faire 1 joie'},{n:'Sam',t:'Corps = rituel'},{n:'Dim',t:'Bilan énergie'}],
+    affirmer: [{n:'Lun',t:'1 non dit à voix haute'},{n:'Mar',t:'Exprimer 1 besoin'},{n:'Mer',t:'1 opinion partagée'},{n:'Jeu',t:'Lire ses affirmations'},{n:'Ven',t:'S\'affirmer 1 fois'},{n:'Sam',t:'Journal de soi'},{n:'Dim',t:'Ce qui a changé ?'}],
+    sereine:  [{n:'Lun',t:'Rituel du soir'},{n:'Mar',t:'Sans réseaux 2h'},{n:'Mer',t:'Méditation 5 min'},{n:'Jeu',t:'Marche en silence'},{n:'Ven',t:'Bain ou pause'},{n:'Sam',t:'Nature ou sortie'},{n:'Dim',t:'Bilan sérénité'}],
+    clarte:   [{n:'Lun',t:'Écrire ses vraies envies'},{n:'Mar',t:'1 décision reportée prise'},{n:'Mer',t:'Carte mentale'},{n:'Jeu',t:'Éliminer 1 chose'},{n:'Ven',t:'Que veux-je vraiment ?'},{n:'Sam',t:'Vision à 1 an'},{n:'Dim',t:'1 cap défini'}],
+    connexion:[{n:'Lun',t:'Message à 1 proche'},{n:'Mar',t:'Rituel auto-amour'},{n:'Mer',t:'1 acte de soin'},{n:'Jeu',t:'Écouter sans répondre'},{n:'Ven',t:'Câlin ou contact'},{n:'Sam',t:'Sortir, se connecter'},{n:'Dim',t:'Gratitude écrite'}],
+  };
+  return programs[goal]||programs.serenie||programs.clarte;
+}
+
+function getCitation(need, block_type) {
+  const map = {
+    paix:     '"Le calme n\'est pas l\'absence de tempête — c\'est apprendre à respirer dedans."',
+    force:    '"Ta force n\'est pas dans l\'absence de peur. Elle est dans ce que tu fais malgré elle."',
+    clarte:   '"Tu n\'as pas besoin de voir l\'escalier entier. Juste le prochain marche."',
+    amour:    '"L\'amour que tu cherches commence par celui que tu t\'accordes."',
+    sens:     '"Le sens n\'est pas quelque chose qu\'on trouve. C\'est quelque chose qu\'on crée."',
+  };
+  return map[need]||map.sens;
+}
+
+/* ── GAUGES ── */
+function calcGauges(intensity, clarity, block_type, elem) {
+  const base = intensity / 5;
+  const pct = v => Math.round(v * 100) + '%';
+  return [
+    {n:'Charge émotionnelle', v:pct(0.4 + base*0.5), cls:''},
+    {n:'Élan vital',          v:pct(Math.max(0.1, 0.8 - base*0.5)), cls:'gr'},
+    {n:'Connexion à soi',     v:pct(clarity/10 + 0.1), cls:'gr'},
+    {n:'Besoin de sens',      v:pct(block_type==='sens'?0.85:0.4+base*0.2), cls:'g'},
+    {n:'Résistance intérieure',v:pct(0.3+base*0.4), cls:''},
+  ];
+}
+
+/* ── FICHE SIGN ── */
+function ficheHTML(s) {
+  const info = SIGNS[s]||SIGNS.lion;
+  return `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+      <span style="font-size:32px;">${info.sym}</span>
+      <div><div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--cr)">${info.n} · ${info.el} · ${info.pl}</div>
+      <div style="font-size:11px;color:var(--cr3)">Signe ${info.type}</div></div>
+    </div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--gl);border-left:2px solid var(--g);padding-left:12px;margin-bottom:14px;line-height:1.5">${info.mantra}</p>
+    <div class="profile-traits" style="margin-bottom:14px">${info.traits.map(t=>`<span class="trait">${t}</span>`).join('')}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;">
+      <div><div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cr3);margin-bottom:5px">Forces</div><div style="color:var(--cr2);line-height:1.7">${info.forces}</div></div>
+      <div><div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cr3);margin-bottom:5px">Zones d'ombre</div><div style="color:var(--cr2);line-height:1.7">${info.ombres}</div></div>
+    </div>`;
+}
+
+/* ── UI STATE ── */
+function go(id) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+}
+
+function pSign(s,sym,el,pl){D.sign=s;D.sym=sym;D.elem=el;D.plan=pl;}
+function sv(k,v){D[k]=v;}
+
+function svScale(k,v,btn,qid){
+  D[k]=v;
+  btn.closest('.scale-track').querySelectorAll('.scale-btn').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  const nb = document.getElementById('next'+qid.replace('q',''));
+  if(nb) nb.classList.add('show');
+}
+
+function aN(n){
+  const pct = Math.round((n/9)*100);
+  document.getElementById('bar').style.width = pct+'%';
+  if(n>=3){document.getElementById('ph2').classList.add('on');}
+  if(n>=7){document.getElementById('ph3').classList.add('on');}
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+  const nx = document.getElementById('q'+n);
+  if(nx){nx.classList.add('on');}
+  document.getElementById('s-quiz').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function finish(){
+  buildFree();
+  go('s-free');
+}
+
+/* ── BUILD FREE ── */
+function buildFree(){
+  const s = SIGNS[D.sign]||SIGNS.lion;
+  const sname = s.n;
+
+  document.getElementById('f-badge').textContent = `— ${D.sym} ${sname} —`;
+
+  // Portrait fluide
+  const PORTRAITS = {
+    belier:`Sous ton signe de Feu cardinal, tu portes une énergie directe et brûlante — celle qui fonce avant que les autres aient trouvé leur chemin. Tu ressens les choses intensément, tu agis vite, et tu t'épuises parfois de ta propre intensité.`,
+    taureau:`Ton signe de Terre te donne une profondeur rare : tu ne t'attaches pas à la légère, tu construis avec patience, et tu ressens les choses dans ton corps avant même de les formuler. Mais cette solidité peut aussi te maintenir dans des situations qui ne te conviennent plus.`,
+    gemeaux:`Ton énergie d'Air te rend capable de tenir dix fils à la fois — les idées fusent, tu t'adaptes, tu comprends vite. Mais cette même vivacité peut devenir ton propre piège quand tu t'y noies plutôt que de choisir une direction.`,
+    cancer:`Ton signe d'Eau te confère une empathie presque physique — tu ressens ce que les autres ne disent pas. Tu protèges, tu nourris, tu aimes avec une intensité que peu comprennent vraiment. Et tu t'oublies souvent dans ce mouvement vers les autres.`,
+    lion:`Ton signe de Feu rayonne — tu as ce don rare de réchauffer les gens simplement en entrant dans une pièce. Mais derrière cette lumière que tu offres si naturellement, il y a une âme qui attend d'être vue, elle aussi, dans sa propre obscurité.`,
+    vierge:`Ton signe de Terre t'a donné un œil acéré : tu vois ce qui cloche, ce qui peut être amélioré, ce qui manque. Cette précision est une force réelle. Mais elle se retourne parfois contre toi — avec la même rigueur que tu analyses le monde, tu t'analyses toi-même.`,
+    balance:`Ton signe d'Air cherche l'harmonie avec une sincérité profonde — tu ressens le déséquilibre avant même qu'il soit visible. Tu crées de la beauté, du lien, de la douceur autour de toi. Et tu paies souvent cette harmonie au prix de tes propres besoins.`,
+    scorpion:`Ton signe d'Eau plonge là où les autres n'osent pas regarder. Tu ressens tout à une profondeur que peu de gens peuvent suivre, et cette intensité est à la fois ton don et ta blessure la plus récurrente.`,
+    sagittaire:`Ton signe de Feu mutable te porte vers l'horizon — tu crois, tu cherches, tu te relèves. Mais cette liberté que tu chéries peut aussi devenir une façon de fuir ce qui demande d'être regardé en face, là, maintenant.`,
+    capricorne:`Ton signe de Terre construit avec une patience et une vision que peu possèdent. Tu portes tes responsabilités sans te plaindre, tu avances. Mais sous cette solidité, il y a une fatigue que tu n'autorises presque jamais à exister vraiment.`,
+    verseau:`Ton signe d'Air voit ce que les autres ne voient pas encore — tu penses différemment, tu ressens différemment. Cette originalité est une force réelle. Mais elle te laisse parfois avec un sentiment d'être profondément seule dans ta façon de percevoir le monde.`,
+    poissons:`Ton signe d'Eau capte les émotions comme une antenne — les tiennes et celles des autres, souvent confondues. Cette sensibilité est un don mystique. Et c'est aussi ce qui te rend si vulnérable quand les frontières entre toi et les autres disparaissent.`,
+  };
+  document.getElementById('f-portrait').textContent = PORTRAITS[D.sign] || PORTRAITS.lion;
+  document.getElementById('f-mantra').textContent = `"${s.mantra}"`;
+
+  // Blocage
+  document.getElementById('f-block-title').textContent = getBlockTitle(D.block_type,D.mood,D.domain,sname);
+  const fullBody = getBlockBody(D.block_type,D.elem,D.mood,D.domain);
+  let preview = fullBody.substring(0,300);
+  const lastDot = preview.lastIndexOf('. ');
+  if(lastDot > 120) preview = preview.substring(0, lastDot+1);
+  document.getElementById('f-block-body').textContent = preview;
+
+  // Micro-friction
+  const FRICTIONS = {
+    peur:     `Ce que tu ressens n'est pas juste de l'inquiétude passagère — c'est un schéma qui s'est installé bien avant que tu ne le remarques.`,
+    sabotage: `Ce blocage est plus profond qu'il n'y paraît : une partie de toi sait exactement ce qu'elle fait — et continue quand même.`,
+    sens:     `Ce vide de sens n'est pas une crise passagère. C'est quelque chose qui attendait d'être regardé depuis longtemps.`,
+    surcharge:`Ce n'est pas juste de la fatigue. C'est le signal que quelque chose, dans ta façon de fonctionner, a atteint sa limite réelle.`,
+    blessure: `Cette blessure colore des choses que tu ne lui relies même plus — et c'est précisément là que son emprise est la plus forte.`,
+  };
+  document.getElementById('f-friction').textContent = FRICTIONS[D.block_type] || FRICTIONS.sens;
+
+  // Jauges + captions
+  const base = D.intensity/5;
+  const g1 = Math.round((0.4+base*0.5)*100);
+  const g2 = Math.round((D.clarity/10+0.1)*100);
+  const g3 = Math.round(Math.max(0.1,0.8-base*0.5)*100);
+  document.getElementById('f-g1').style.width = g1+'%';
+  document.getElementById('f-g2').style.width = g2+'%';
+  document.getElementById('f-g3').style.width = g3+'%';
+  document.getElementById('f-c1').textContent = g1>=75 ? `Tu portes beaucoup plus que ce que tu laisses voir — et ton corps le ressent.` : g1>=50 ? `La charge est réelle, même si tu continues à avancer malgré elle.` : `La pression est présente, même si elle reste encore gérable pour l'instant.`;
+  document.getElementById('f-c2').textContent = g2>=65 ? `Tu vois clairement ce qui se passe — mais voir sans pouvoir changer est parfois plus douloureux encore.` : g2>=35 ? `Des éclairs de lucidité existent, mais le brouillard reprend souvent le dessus.` : `Tu es dans une phase où il est difficile de distinguer ce qui vient de toi de ce qui vient des autres.`;
+  document.getElementById('f-c3').textContent = g3>=60 ? `Il reste une étincelle — mais elle a besoin d'être nourrie avant de s'éteindre.` : g3>=30 ? `Ton élan s'est mis en veille. Ce n'est pas une fin — c'est un signal.` : `Quelque chose en toi a décidé de s'arrêter pour survivre. C'est important à entendre.`;
+
+  // Stripe sign params
+  sessionStorage.setItem('amb_sign',  D.sign);
+  sessionStorage.setItem('amb_sym',   D.sym);
+  sessionStorage.setItem('amb_elem',  D.elem);
+  sessionStorage.setItem('amb_plan',  D.plan);
+  sessionStorage.setItem('amb_mood',  D.mood);
+  sessionStorage.setItem('amb_domain',D.domain);
+  sessionStorage.setItem('amb_bt',    D.block_type);
+  sessionStorage.setItem('amb_need',  D.need);
+  sessionStorage.setItem('amb_rs',    D.ritual_style);
+  sessionStorage.setItem('amb_goal',  D.goal);
+  sessionStorage.setItem('amb_int',   D.intensity);
+  sessionStorage.setItem('amb_cl',    D.clarity);
+}
+
+function guardStripe(){
+  const href = document.getElementById('stripe-btn').getAttribute('href');
+  if(href==='STRIPE_LINK_ICI'){
+    alert('⚠️ Remplace STRIPE_LINK_ICI dans le code par ton lien Stripe !');
+    return false;
+  }
+  return true;
+}
+
+/* ── BUILD FULL RESULT ── */
+function buildResult(){
+  const sign   = sessionStorage.getItem('amb_sign')  ||D.sign;
+  const sym    = sessionStorage.getItem('amb_sym')   ||D.sym;
+  const elem   = sessionStorage.getItem('amb_elem')  ||D.elem;
+  const plan   = sessionStorage.getItem('amb_plan')  ||D.plan;
+  const bt     = sessionStorage.getItem('amb_bt')    ||D.block_type;
+  const need   = sessionStorage.getItem('amb_need')  ||D.need;
+  const rs     = sessionStorage.getItem('amb_rs')    ||D.ritual_style;
+  const goal   = sessionStorage.getItem('amb_goal')  ||D.goal;
+  const domain = sessionStorage.getItem('amb_domain')||D.domain;
+  const mood   = sessionStorage.getItem('amb_mood')  ||D.mood;
+  const intens = parseInt(sessionStorage.getItem('amb_int')||D.intensity);
+  const clar   = parseInt(sessionStorage.getItem('amb_cl') ||D.clarity);
+
+  // Update D for share
+  Object.assign(D,{sign,sym,elem,plan,block_type:bt,need,ritual_style:rs,goal,domain,mood,intensity:intens,clarity:clar});
+
+  const s = SIGNS[sign]||SIGNS.lion;
+  const sname = s.n;
+
+  document.getElementById('r-title').textContent = `Diagnostic ${sname}`;
+  document.getElementById('r-sign').textContent  = `${sym} ${sname} · ${elem} · ${plan}`;
+
+  // 01 profil
+  document.getElementById('r-prof-t').textContent = `${sname} — profil de ton énergie`;
+  document.getElementById('r-prof-b').textContent = `Ton signe ${sname}, gouverné par ${plan} et porté par l'élément ${elem}, te confère une énergie naturellement ${(ELEM[elem]||ELEM.Feu).adj} et ${(ELEM[elem]||ELEM.Feu).force}. C'est à la fois ta plus grande force et parfois la source de tes plus grands défis.`;
+  const rtr = document.getElementById('r-traits');
+  s.traits.forEach(t=>{ rtr.innerHTML+=`<span class="trait">${t}</span>`; });
+  document.getElementById('r-mantra').textContent = s.mantra;
+
+  // 02 blocage
+  document.getElementById('r-bl-t').textContent = getBlockTitle(bt,mood,domain,sname);
+  document.getElementById('r-bl-b').textContent = getBlockBody(bt,elem,mood,domain);
+
+  // 03 gauges
+  const gauges = calcGauges(intens,clar,bt,elem);
+  const gEl = document.getElementById('r-meters');
+  gauges.forEach(g=>{
+    gEl.innerHTML+=`<div class="m-row"><span class="m-lbl">${g.n}</span><div class="m-track"><div class="m-fill ${g.cls}" style="width:${g.v}"></div></div><span class="m-val">${g.v}</span></div>`;
+  });
+
+  // 04 karmic
+  const k = getKarmic(bt, sessionStorage.getItem('amb_duration')||'schema', elem, s);
+  document.getElementById('r-k-t').textContent = k.t;
+  document.getElementById('r-k-b').textContent = k.b;
+  const alertEl = document.getElementById('r-alert');
+  alertEl.innerHTML = `<strong>Schéma à surveiller</strong>${getAlert(null,bt)}`;
+
+  // 05 ritual
+  const rit = getRitual(rs,need,elem);
+  document.getElementById('r-rit-t').textContent = rit.t;
+  const rsEl = document.getElementById('r-rit-s');
+  rit.steps.forEach((st,i)=>{ rsEl.innerHTML+=`<div class="rstep"><div class="snum">${i+1}</div><div class="stxt">${st}</div></div>`; });
+
+  // 06 affirmations
+  D.need=need; D.block_type=bt;
+  const affs = getAffs(need,bt);
+  const aEl = document.getElementById('r-affs');
+  affs.forEach(a=>{ aEl.innerHTML+=`<div class="aff">${a}</div>`; });
+
+  // 07 programme
+  document.getElementById('r-prog-t').textContent = 'Une micro-action par jour pendant 7 jours';
+  const week = getWeek(goal,domain);
+  const wEl = document.getElementById('r-week');
+  week.forEach((d,i)=>{ wEl.innerHTML+=`<div class="day${i===0?' hi':''}"><div class="day-n">${d.n}</div><div class="day-t">${d.t}</div></div>`; });
+
+  // 08 fiche
+  document.getElementById('r-fiche').innerHTML = ficheHTML(sign);
+
+  go('s-result');
+}
+
+/* ── SHARE ── */
+function doShareFree(){
+  const s = SIGNS[D.sign]||SIGNS.lion;
+  const txt = `✨ Mon diagnostic AstroMoodBox vient de révéler mon blocage émotionnel caché. Trop précis pour mon signe ${s.n} ! Teste le tien — c'est gratuit 🌙\nastromoodbox.com`;
+  if(navigator.share){navigator.share({title:'Mon diagnostic AstroMoodBox',text:txt});}
+  else{navigator.clipboard.writeText(txt).then(()=>alert('Copié ! Colle dans ta story 🌙'));}
+}
+function doShareFull(){
+  const s = SIGNS[D.sign]||SIGNS.lion;
+  const txt = `✦ Mon rapport AstroMoodBox vient de décoder exactement pourquoi je me sens bloquée. C'est dingue à quel point c'est précis pour un ${s.n}. Lien dans ma bio 🌙\nastromoodbox.com`;
+  if(navigator.share){navigator.share({title:'Mon rapport AstroMoodBox complet',text:txt});}
+  else{navigator.clipboard.writeText(txt).then(()=>alert('Copié ! Colle dans ta story 🌙'));}
+}
+
+/* ── MODAL ── */
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('click',function(e){if(e.target.classList.contains('modal-overlay')){closeM(e.target.id);}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(function(m){closeM(m.id);});}});
+
+/* ── ROUTER ── */
+(function(){
+  const p = new URLSearchParams(window.location.search);
+  if(p.get('success')==='1'||p.get('result')==='1'){ buildResult(); }
+})();
+</script>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">AstroMoodBox</div>
+  <nav class="footer-links">
+    <button class="footer-link" onclick="openM(&#39;ml&#39;)">Mentions légales</button>
+    <button class="footer-link" onclick="openM(&#39;pc&#39;)">Confidentialité</button>
+    <button class="footer-link" onclick="openM(&#39;cg&#39;)">CGV</button>
+    <button class="footer-link" onclick="openM(&#39;ct&#39;)">Contact</button>
+  </nav>
+  <p class="footer-copy">© 2025 AstroMoodBox — Tous droits réservés</p>
+</footer>
+
+<!-- MODAL MENTIONS -->
+<div class="modal-overlay" id="ml">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM(&#39;ml&#39;)">×</button>
+    <p class="modal-tag">Informations légales</p>
+    <h2 class="modal-title">Mentions légales</h2>
+    <div class="modal-body">
+      <h3>Éditeur du site</h3>
+      <p>AstroMoodBox<br>France — Alsace<br>Email : <a href="mailto:astromood.box@proton.me">astromood.box@proton.me</a></p>
+      <h3>Hébergement</h3>
+      <p>Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA</p>
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble des contenus (textes, visuels, logique de diagnostic, nom de marque) est la propriété exclusive d'AstroMoodBox. Toute reproduction sans autorisation est interdite.</p>
+      <h3>Responsabilité</h3>
+      <p>Les diagnostics fournis sont à caractère informatif et divertissant. Ils ne constituent pas un avis médical ou psychologique.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIDENTIALITÉ -->
+<div class="modal-overlay" id="pc">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM(&#39;pc&#39;)">×</button>
+    <p class="modal-tag">Vos données</p>
+    <h2 class="modal-title">Politique de confidentialité</h2>
+    <div class="modal-body">
+      <h3>Données collectées</h3>
+      <p>AstroMoodBox collecte uniquement les données nécessaires au traitement de votre commande : adresse email (via Stripe pour le reçu) et données de paiement (traitées exclusivement par Stripe). Les réponses au questionnaire sont traitées localement dans votre navigateur et non transmises à un serveur.</p>
+      <h3>Cookies</h3>
+      <p>Ce site n'utilise pas de cookies publicitaires. Le sessionStorage conserve vos réponses le temps de la session uniquement.</p>
+      <h3>Vos droits (RGPD)</h3>
+      <p>Accès, rectification, suppression : <a href="mailto:astromood.box@proton.me">astromood.box@proton.me</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CGV -->
+<div class="modal-overlay" id="cg">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM(&#39;cg&#39;)">×</button>
+    <p class="modal-tag">Conditions générales</p>
+    <h2 class="modal-title">Conditions générales de vente</h2>
+    <div class="modal-body">
+      <h3>Objet</h3>
+      <p>Les présentes CGV régissent la vente de produits numériques sur astromoodbox.com. En achetant, vous acceptez ces conditions.</p>
+      <h3>Produit</h3>
+      <p>Rapport numérique de diagnostic astro-émotionnel, accessible immédiatement après paiement. Contenu informatif et divertissant, sans valeur thérapeutique.</p>
+      <h3>Prix et paiement</h3>
+      <p>Le prix est affiché sur la page de commande au moment de l'achat. Paiement sécurisé par Stripe. AstroMoodBox n'accède à aucune donnée bancaire.</p>
+      <h3>Droit de rétractation</h3>
+      <p>Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne s'applique pas aux contenus numériques fournis immédiatement avec votre accord exprès.</p>
+      <h3>Support</h3>
+      <p>En cas de problème technique : <a href="mailto:astromood.box@proton.me">astromood.box@proton.me</a> — réponse sous 48h.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONTACT -->
+<div class="modal-overlay" id="ct">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM(&#39;ct&#39;)">×</button>
+    <p class="modal-tag">Nous contacter</p>
+    <h2 class="modal-title">Contact</h2>
+    <div class="modal-body">
+      <h3>Service client</h3>
+      <p>📧 <a href="mailto:astromood.box@proton.me">astromood.box@proton.me</a><br>Réponse sous 48h ouvrées.</p>
+      <h3>Problème d'accès à votre rapport</h3>
+      <p>Contactez-nous en indiquant l'adresse email utilisée lors du paiement.</p>
+      <h3>Partenariats et presse</h3>
+      <p><a href="mailto:astromood.box@proton.me">astromood.box@proton.me</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body></html>
