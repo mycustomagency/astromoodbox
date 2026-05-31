@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/reuss/Downloads/index_12.html -->
-<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AstroMoodBox — Quel est ton blocage émotionnel ?</title>
 <meta name="description" content="Découvre en 2 minutes pourquoi tu te sens bloquée. Diagnostic astro émotionnel personnalisé.">
 <meta property="og:title" content="Mon diagnostic AstroMoodBox ✦">
-<meta property="og:description" content="J&#39;ai découvert mon blocage émotionnel caché. Fais le test — résultat immédiat.">
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./index_files/css2" rel="stylesheet">
+<meta property="og:description" content="J'ai découvert mon blocage émotionnel caché. Fais le test — résultat immédiat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ── TOKENS ── */
 :root {
@@ -382,6 +382,43 @@ body::before{
 
 /* Share section */
 .share-sec{text-align:center;margin-top:40px;padding:26px 18px;background:var(--s1);border:1px solid rgba(196,154,20,.25);border-radius:4px;}
+
+/* BONUS FICHE */
+.bonus-card{
+  background:var(--s1);
+  border:1px solid rgba(196,154,20,.3);
+  border-radius:4px;
+  padding:24px 20px;
+  margin-bottom:14px;
+  text-align:center;
+}
+.bonus-tag{
+  display:inline-block;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gl);margin-bottom:10px;
+  background:rgba(196,154,20,.1);
+  padding:4px 14px;border-radius:99px;
+}
+.bonus-title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:22px;font-weight:300;
+  color:var(--cr);margin-bottom:6px;line-height:1.3;
+}
+.bonus-value{
+  font-size:12px;color:var(--cr3);margin-bottom:18px;
+}
+.bonus-value strong{color:var(--gl);}
+.btn-dl{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;
+  background:linear-gradient(135deg,var(--g),#8a6500);
+  color:#1a0f00;
+  font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+  letter-spacing:.07em;text-transform:uppercase;
+  border:none;border-radius:2px;cursor:pointer;
+  text-decoration:none;transition:all .25s;
+}
+.btn-dl:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,154,20,.3);}
 .share-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;color:var(--cr);margin-bottom:6px;}
 .share-s{font-size:12px;color:var(--cr3);margin-bottom:14px;}
 .share-cta{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;border:1px solid rgba(196,154,20,.3);border-radius:2px;color:var(--gl);font-size:13px;background:transparent;cursor:pointer;transition:background .2s;font-family:'DM Sans',sans-serif;}
@@ -422,7 +459,7 @@ body::before{
     <p class="land-eye">Diagnostic astro émotionnel</p>
     <h1 class="land-h1">Pourquoi tu te sens <em>bloquée</em> en ce moment</h1>
     <p class="land-sub">9 questions · 2 minutes · Résultat immédiat et gratuit</p>
-    <button class="btn-start" onclick="go(&#39;s-quiz&#39;)">Découvrir mon blocage →</button>
+    <button class="btn-start" onclick="go('s-quiz')">Découvrir mon blocage →</button>
     <div class="trust">
       <span>Confidentiel</span>
       <span>Astrologie karmique</span>
@@ -450,18 +487,18 @@ body::before{
       <h2 class="step-q">Quel est ton signe ?</h2>
       <p class="step-hint">La base de tout ton diagnostic.</p>
       <div class="sign-grid">
-        <button class="sign-btn" onclick="pSign(&#39;belier&#39;,&#39;♈&#39;,&#39;Feu&#39;,&#39;Mars&#39;);aN(2)"><span class="sign-sym">♈</span><span><span class="sign-name">Bélier</span><span class="sign-dates">21 mars – 19 avr</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;taureau&#39;,&#39;♉&#39;,&#39;Terre&#39;,&#39;Vénus&#39;);aN(2)"><span class="sign-sym">♉</span><span><span class="sign-name">Taureau</span><span class="sign-dates">20 avr – 20 mai</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;gemeaux&#39;,&#39;♊&#39;,&#39;Air&#39;,&#39;Mercure&#39;);aN(2)"><span class="sign-sym">♊</span><span><span class="sign-name">Gémeaux</span><span class="sign-dates">21 mai – 20 juin</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;cancer&#39;,&#39;♋&#39;,&#39;Eau&#39;,&#39;Lune&#39;);aN(2)"><span class="sign-sym">♋</span><span><span class="sign-name">Cancer</span><span class="sign-dates">21 juin – 22 juil</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;lion&#39;,&#39;♌&#39;,&#39;Feu&#39;,&#39;Soleil&#39;);aN(2)"><span class="sign-sym">♌</span><span><span class="sign-name">Lion</span><span class="sign-dates">23 juil – 22 août</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;vierge&#39;,&#39;♍&#39;,&#39;Terre&#39;,&#39;Mercure&#39;);aN(2)"><span class="sign-sym">♍</span><span><span class="sign-name">Vierge</span><span class="sign-dates">23 août – 22 sept</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;balance&#39;,&#39;♎&#39;,&#39;Air&#39;,&#39;Vénus&#39;);aN(2)"><span class="sign-sym">♎</span><span><span class="sign-name">Balance</span><span class="sign-dates">23 sept – 22 oct</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;scorpion&#39;,&#39;♏&#39;,&#39;Eau&#39;,&#39;Pluton&#39;);aN(2)"><span class="sign-sym">♏</span><span><span class="sign-name">Scorpion</span><span class="sign-dates">23 oct – 21 nov</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;sagittaire&#39;,&#39;♐&#39;,&#39;Feu&#39;,&#39;Jupiter&#39;);aN(2)"><span class="sign-sym">♐</span><span><span class="sign-name">Sagittaire</span><span class="sign-dates">22 nov – 21 déc</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;capricorne&#39;,&#39;♑&#39;,&#39;Terre&#39;,&#39;Saturne&#39;);aN(2)"><span class="sign-sym">♑</span><span><span class="sign-name">Capricorne</span><span class="sign-dates">22 déc – 19 jan</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;verseau&#39;,&#39;♒&#39;,&#39;Air&#39;,&#39;Uranus&#39;);aN(2)"><span class="sign-sym">♒</span><span><span class="sign-name">Verseau</span><span class="sign-dates">20 jan – 18 fév</span></span></button>
-        <button class="sign-btn" onclick="pSign(&#39;poissons&#39;,&#39;♓&#39;,&#39;Eau&#39;,&#39;Neptune&#39;);aN(2)"><span class="sign-sym">♓</span><span><span class="sign-name">Poissons</span><span class="sign-dates">19 fév – 20 mars</span></span></button>
+        <button class="sign-btn" onclick="pSign('belier','♈','Feu','Mars');aN(2)"><span class="sign-sym">♈</span><span><span class="sign-name">Bélier</span><span class="sign-dates">21 mars – 19 avr</span></span></button>
+        <button class="sign-btn" onclick="pSign('taureau','♉','Terre','Vénus');aN(2)"><span class="sign-sym">♉</span><span><span class="sign-name">Taureau</span><span class="sign-dates">20 avr – 20 mai</span></span></button>
+        <button class="sign-btn" onclick="pSign('gemeaux','♊','Air','Mercure');aN(2)"><span class="sign-sym">♊</span><span><span class="sign-name">Gémeaux</span><span class="sign-dates">21 mai – 20 juin</span></span></button>
+        <button class="sign-btn" onclick="pSign('cancer','♋','Eau','Lune');aN(2)"><span class="sign-sym">♋</span><span><span class="sign-name">Cancer</span><span class="sign-dates">21 juin – 22 juil</span></span></button>
+        <button class="sign-btn" onclick="pSign('lion','♌','Feu','Soleil');aN(2)"><span class="sign-sym">♌</span><span><span class="sign-name">Lion</span><span class="sign-dates">23 juil – 22 août</span></span></button>
+        <button class="sign-btn" onclick="pSign('vierge','♍','Terre','Mercure');aN(2)"><span class="sign-sym">♍</span><span><span class="sign-name">Vierge</span><span class="sign-dates">23 août – 22 sept</span></span></button>
+        <button class="sign-btn" onclick="pSign('balance','♎','Air','Vénus');aN(2)"><span class="sign-sym">♎</span><span><span class="sign-name">Balance</span><span class="sign-dates">23 sept – 22 oct</span></span></button>
+        <button class="sign-btn" onclick="pSign('scorpion','♏','Eau','Pluton');aN(2)"><span class="sign-sym">♏</span><span><span class="sign-name">Scorpion</span><span class="sign-dates">23 oct – 21 nov</span></span></button>
+        <button class="sign-btn" onclick="pSign('sagittaire','♐','Feu','Jupiter');aN(2)"><span class="sign-sym">♐</span><span><span class="sign-name">Sagittaire</span><span class="sign-dates">22 nov – 21 déc</span></span></button>
+        <button class="sign-btn" onclick="pSign('capricorne','♑','Terre','Saturne');aN(2)"><span class="sign-sym">♑</span><span><span class="sign-name">Capricorne</span><span class="sign-dates">22 déc – 19 jan</span></span></button>
+        <button class="sign-btn" onclick="pSign('verseau','♒','Air','Uranus');aN(2)"><span class="sign-sym">♒</span><span><span class="sign-name">Verseau</span><span class="sign-dates">20 jan – 18 fév</span></span></button>
+        <button class="sign-btn" onclick="pSign('poissons','♓','Eau','Neptune');aN(2)"><span class="sign-sym">♓</span><span><span class="sign-name">Poissons</span><span class="sign-dates">19 fév – 20 mars</span></span></button>
       </div>
     </div>
 
@@ -471,11 +508,11 @@ body::before{
       <h2 class="step-q">Où est-ce que ça coince le plus ?</h2>
       <p class="step-hint">La première réponse qui vient est souvent la vraie.</p>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;amour&#39;);aN(3)"><span class="opt-ico">♡</span><span><span class="opt-main">L'amour et mes relations</span><span class="opt-sub">Liens, schémas qui se répètent, manque de connexion</span></span></button>
-        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;travail&#39;);aN(3)"><span class="opt-ico">◇</span><span><span class="opt-main">Mon travail et ma vie financière</span><span class="opt-sub">Stagnation, perte de sens, pression</span></span></button>
-        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;soi&#39;);aN(3)"><span class="opt-ico">◯</span><span><span class="opt-main">Ma relation à moi-même</span><span class="opt-sub">Confiance, énergie, identité</span></span></button>
-        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;famille&#39;);aN(3)"><span class="opt-ico">△</span><span><span class="opt-main">Ma famille ou mes proches</span><span class="opt-sub">Liens difficiles, blessures, distance</span></span></button>
-        <button class="opt" onclick="sv(&#39;domain&#39;,&#39;sens&#39;);aN(3)"><span class="opt-ico">✦</span><span><span class="opt-main">Le sens de ma vie</span><span class="opt-sub">Vocation, direction, spiritualité</span></span></button>
+        <button class="opt" onclick="sv('domain','amour');aN(3)"><span class="opt-ico">♡</span><span><span class="opt-main">L'amour et mes relations</span><span class="opt-sub">Liens, schémas qui se répètent, manque de connexion</span></span></button>
+        <button class="opt" onclick="sv('domain','travail');aN(3)"><span class="opt-ico">◇</span><span><span class="opt-main">Mon travail et ma vie financière</span><span class="opt-sub">Stagnation, perte de sens, pression</span></span></button>
+        <button class="opt" onclick="sv('domain','soi');aN(3)"><span class="opt-ico">◯</span><span><span class="opt-main">Ma relation à moi-même</span><span class="opt-sub">Confiance, énergie, identité</span></span></button>
+        <button class="opt" onclick="sv('domain','famille');aN(3)"><span class="opt-ico">△</span><span><span class="opt-main">Ma famille ou mes proches</span><span class="opt-sub">Liens difficiles, blessures, distance</span></span></button>
+        <button class="opt" onclick="sv('domain','sens');aN(3)"><span class="opt-ico">✦</span><span><span class="opt-main">Le sens de ma vie</span><span class="opt-sub">Vocation, direction, spiritualité</span></span></button>
       </div>
     </div>
 
@@ -485,11 +522,11 @@ body::before{
       <p class="step-phase">Ce que tu ressens</p>
       <h2 class="step-q">Si tu devais mettre un seul mot sur ce que tu traverses…</h2>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;vide&#39;);aN(4)"><span class="opt-ico">🌫</span><span><span class="opt-main">Vide</span><span class="opt-sub">Je tourne en rond, plus d'élan</span></span></button>
-        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;anxieuse&#39;);aN(4)"><span class="opt-ico">🌊</span><span><span class="opt-main">Anxieuse</span><span class="opt-sub">Mon esprit s'emballe, je n'arrive plus à me poser</span></span></button>
-        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;perdue&#39;);aN(4)"><span class="opt-ico">🌑</span><span><span class="opt-main">Perdue</span><span class="opt-sub">Je ne sais plus qui je suis ni ce que je veux</span></span></button>
-        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;triste&#39;);aN(4)"><span class="opt-ico">🌧</span><span><span class="opt-main">Triste</span><span class="opt-sub">Un poids que je n'arrive pas à mettre de côté</span></span></button>
-        <button class="opt" onclick="sv(&#39;mood&#39;,&#39;bloquee&#39;);aN(4)"><span class="opt-ico">⚡</span><span><span class="opt-main">Bloquée</span><span class="opt-sub">Je vois ce que je veux mais quelque chose m'en empêche</span></span></button>
+        <button class="opt" onclick="sv('mood','vide');aN(4)"><span class="opt-ico">🌫</span><span><span class="opt-main">Vide</span><span class="opt-sub">Je tourne en rond, plus d'élan</span></span></button>
+        <button class="opt" onclick="sv('mood','anxieuse');aN(4)"><span class="opt-ico">🌊</span><span><span class="opt-main">Anxieuse</span><span class="opt-sub">Mon esprit s'emballe, je n'arrive plus à me poser</span></span></button>
+        <button class="opt" onclick="sv('mood','perdue');aN(4)"><span class="opt-ico">🌑</span><span><span class="opt-main">Perdue</span><span class="opt-sub">Je ne sais plus qui je suis ni ce que je veux</span></span></button>
+        <button class="opt" onclick="sv('mood','triste');aN(4)"><span class="opt-ico">🌧</span><span><span class="opt-main">Triste</span><span class="opt-sub">Un poids que je n'arrive pas à mettre de côté</span></span></button>
+        <button class="opt" onclick="sv('mood','bloquee');aN(4)"><span class="opt-ico">⚡</span><span><span class="opt-main">Bloquée</span><span class="opt-sub">Je vois ce que je veux mais quelque chose m'en empêche</span></span></button>
       </div>
     </div>
 
@@ -499,11 +536,11 @@ body::before{
       <h2 class="step-q">À quel point est-ce que ça pèse en ce moment ?</h2>
       <p class="step-hint">1 = légère gêne &nbsp;·&nbsp; 5 = vraiment difficile à porter</p>
       <div class="scale-track">
-        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,1,this,&#39;q4&#39;)">1</button>
-        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,2,this,&#39;q4&#39;)">2</button>
-        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,3,this,&#39;q4&#39;)">3</button>
-        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,4,this,&#39;q4&#39;)">4</button>
-        <button class="scale-btn" onclick="svScale(&#39;intensity&#39;,5,this,&#39;q4&#39;)">5</button>
+        <button class="scale-btn" onclick="svScale('intensity',1,this,'q4')">1</button>
+        <button class="scale-btn" onclick="svScale('intensity',2,this,'q4')">2</button>
+        <button class="scale-btn" onclick="svScale('intensity',3,this,'q4')">3</button>
+        <button class="scale-btn" onclick="svScale('intensity',4,this,'q4')">4</button>
+        <button class="scale-btn" onclick="svScale('intensity',5,this,'q4')">5</button>
       </div>
       <div class="scale-labels"><span class="scale-lbl">Légère gêne</span><span class="scale-lbl">Très difficile</span></div>
       <button class="btn-next" id="next4" onclick="aN(5)">Continuer →</button>
@@ -515,11 +552,11 @@ body::before{
       <h2 class="step-q">Honnêtement… d'où vient ce blocage selon toi ?</h2>
       <p class="step-hint">Choisis ce qui résonne, même si c'est inconfortable.</p>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;peur&#39;);aN(6)"><span class="opt-ico">😰</span><span><span class="opt-main">La peur</span><span class="opt-sub">De rater, d'être rejetée, de ne pas être à la hauteur</span></span></button>
-        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;sabotage&#39;);aN(6)"><span class="opt-ico">🌀</span><span><span class="opt-main">Moi-même</span><span class="opt-sub">Je sais ce que je dois faire, mais je m'en empêche</span></span></button>
-        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;sens&#39;);aN(6)"><span class="opt-ico">🌫</span><span><span class="opt-main">Le manque de sens</span><span class="opt-sub">Je ne vois plus pourquoi je fais tout ça</span></span></button>
-        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;surcharge&#39;);aN(6)"><span class="opt-ico">🧠</span><span><span class="opt-main">La surcharge</span><span class="opt-sub">Trop de tout — je suis submergée</span></span></button>
-        <button class="opt" onclick="sv(&#39;block_type&#39;,&#39;blessure&#39;);aN(6)"><span class="opt-ico">💔</span><span><span class="opt-main">Une blessure non-guérie</span><span class="opt-sub">Quelque chose du passé qui continue de peser</span></span></button>
+        <button class="opt" onclick="sv('block_type','peur');aN(6)"><span class="opt-ico">😰</span><span><span class="opt-main">La peur</span><span class="opt-sub">De rater, d'être rejetée, de ne pas être à la hauteur</span></span></button>
+        <button class="opt" onclick="sv('block_type','sabotage');aN(6)"><span class="opt-ico">🌀</span><span><span class="opt-main">Moi-même</span><span class="opt-sub">Je sais ce que je dois faire, mais je m'en empêche</span></span></button>
+        <button class="opt" onclick="sv('block_type','sens');aN(6)"><span class="opt-ico">🌫</span><span><span class="opt-main">Le manque de sens</span><span class="opt-sub">Je ne vois plus pourquoi je fais tout ça</span></span></button>
+        <button class="opt" onclick="sv('block_type','surcharge');aN(6)"><span class="opt-ico">🧠</span><span><span class="opt-main">La surcharge</span><span class="opt-sub">Trop de tout — je suis submergée</span></span></button>
+        <button class="opt" onclick="sv('block_type','blessure');aN(6)"><span class="opt-ico">💔</span><span><span class="opt-main">Une blessure non-guérie</span><span class="opt-sub">Quelque chose du passé qui continue de peser</span></span></button>
       </div>
     </div>
 
@@ -529,11 +566,11 @@ body::before{
       <h2 class="step-q">Tu es dans le brouillard… ou tu vois clairement mais tu restes bloquée ?</h2>
       <p class="step-hint">1 = brouillard total &nbsp;·&nbsp; 5 = je vois, mais je reste coincée</p>
       <div class="scale-track">
-        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,1,this,&#39;q6&#39;)">1</button>
-        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,2,this,&#39;q6&#39;)">2</button>
-        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,3,this,&#39;q6&#39;)">3</button>
-        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,4,this,&#39;q6&#39;)">4</button>
-        <button class="scale-btn" onclick="svScale(&#39;clarity&#39;,5,this,&#39;q6&#39;)">5</button>
+        <button class="scale-btn" onclick="svScale('clarity',1,this,'q6')">1</button>
+        <button class="scale-btn" onclick="svScale('clarity',2,this,'q6')">2</button>
+        <button class="scale-btn" onclick="svScale('clarity',3,this,'q6')">3</button>
+        <button class="scale-btn" onclick="svScale('clarity',4,this,'q6')">4</button>
+        <button class="scale-btn" onclick="svScale('clarity',5,this,'q6')">5</button>
       </div>
       <div class="scale-labels"><span class="scale-lbl">Brouillard total</span><span class="scale-lbl">Je vois, mais bloquée</span></div>
       <button class="btn-next" id="next6" onclick="aN(7)">Continuer →</button>
@@ -545,11 +582,11 @@ body::before{
       <p class="step-phase">Ce dont tu as besoin</p>
       <h2 class="step-q">Si tu pouvais ressentir une seule chose dès ce soir…</h2>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;need&#39;,&#39;paix&#39;);aN(8)"><span class="opt-ico">🌿</span><span><span class="opt-main">De la paix</span><span class="opt-sub">Un silence intérieur, enfin</span></span></button>
-        <button class="opt" onclick="sv(&#39;need&#39;,&#39;force&#39;);aN(8)"><span class="opt-ico">💪</span><span><span class="opt-main">De la force et de la confiance</span><span class="opt-sub">Me sentir capable, solide, à ma place</span></span></button>
-        <button class="opt" onclick="sv(&#39;need&#39;,&#39;clarte&#39;);aN(8)"><span class="opt-ico">💡</span><span><span class="opt-main">De la clarté</span><span class="opt-sub">Voir où je vais, enfin comprendre</span></span></button>
-        <button class="opt" onclick="sv(&#39;need&#39;,&#39;amour&#39;);aN(8)"><span class="opt-ico">❤️</span><span><span class="opt-main">De l'amour et de la connexion</span><span class="opt-sub">Sentir que je ne suis pas seule</span></span></button>
-        <button class="opt" onclick="sv(&#39;need&#39;,&#39;sens&#39;);aN(8)"><span class="opt-ico">✨</span><span><span class="opt-main">Du sens</span><span class="opt-sub">Retrouver une raison de me lever le matin</span></span></button>
+        <button class="opt" onclick="sv('need','paix');aN(8)"><span class="opt-ico">🌿</span><span><span class="opt-main">De la paix</span><span class="opt-sub">Un silence intérieur, enfin</span></span></button>
+        <button class="opt" onclick="sv('need','force');aN(8)"><span class="opt-ico">💪</span><span><span class="opt-main">De la force et de la confiance</span><span class="opt-sub">Me sentir capable, solide, à ma place</span></span></button>
+        <button class="opt" onclick="sv('need','clarte');aN(8)"><span class="opt-ico">💡</span><span><span class="opt-main">De la clarté</span><span class="opt-sub">Voir où je vais, enfin comprendre</span></span></button>
+        <button class="opt" onclick="sv('need','amour');aN(8)"><span class="opt-ico">❤️</span><span><span class="opt-main">De l'amour et de la connexion</span><span class="opt-sub">Sentir que je ne suis pas seule</span></span></button>
+        <button class="opt" onclick="sv('need','sens');aN(8)"><span class="opt-ico">✨</span><span><span class="opt-main">Du sens</span><span class="opt-sub">Retrouver une raison de me lever le matin</span></span></button>
       </div>
     </div>
 
@@ -558,10 +595,10 @@ body::before{
       <p class="step-phase">Ta façon de te reconnecter</p>
       <h2 class="step-q">Qu'est-ce qui t'a déjà aidée, même un peu ?</h2>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;silence&#39;);aN(9)"><span class="opt-ico">🌿</span><span><span class="opt-main">Le silence et la solitude</span><span class="opt-sub">Me retrouver seule, respirer, me poser</span></span></button>
-        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;ecriture&#39;);aN(9)"><span class="opt-ico">✍️</span><span><span class="opt-main">Écrire ce que je ressens</span><span class="opt-sub">Les mots m'aident à y voir plus clair</span></span></button>
-        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;corps&#39;);aN(9)"><span class="opt-ico">🎵</span><span><span class="opt-main">Bouger, danser, me dépenser</span><span class="opt-sub">Mon corps évacue ce que ma tête retient</span></span></button>
-        <button class="opt" onclick="sv(&#39;ritual_style&#39;,&#39;rituel&#39;);aN(9)"><span class="opt-ico">🕯</span><span><span class="opt-main">Les rituels et le spirituel</span><span class="opt-sub">Bougie, méditation, me reconnecter à quelque chose de plus grand</span></span></button>
+        <button class="opt" onclick="sv('ritual_style','silence');aN(9)"><span class="opt-ico">🌿</span><span><span class="opt-main">Le silence et la solitude</span><span class="opt-sub">Me retrouver seule, respirer, me poser</span></span></button>
+        <button class="opt" onclick="sv('ritual_style','ecriture');aN(9)"><span class="opt-ico">✍️</span><span><span class="opt-main">Écrire ce que je ressens</span><span class="opt-sub">Les mots m'aident à y voir plus clair</span></span></button>
+        <button class="opt" onclick="sv('ritual_style','corps');aN(9)"><span class="opt-ico">🎵</span><span><span class="opt-main">Bouger, danser, me dépenser</span><span class="opt-sub">Mon corps évacue ce que ma tête retient</span></span></button>
+        <button class="opt" onclick="sv('ritual_style','rituel');aN(9)"><span class="opt-ico">🕯</span><span><span class="opt-main">Les rituels et le spirituel</span><span class="opt-sub">Bougie, méditation, me reconnecter à quelque chose de plus grand</span></span></button>
       </div>
     </div>
 
@@ -571,11 +608,11 @@ body::before{
       <h2 class="step-q">Si une seule chose changeait dès demain… ce serait quoi ?</h2>
       <p class="step-hint">Laisse venir la réponse instinctive.</p>
       <div class="opts">
-        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;energie&#39;);finish()"><span class="opt-ico">⚡</span><span><span class="opt-main">Retrouver de l'énergie</span><span class="opt-sub">Ne plus me sentir à plat</span></span></button>
-        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;affirmer&#39;);finish()"><span class="opt-ico">💬</span><span><span class="opt-main">M'affirmer et oser m'exprimer</span><span class="opt-sub">Dire ce que je pense, prendre ma place</span></span></button>
-        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;sereine&#39;);finish()"><span class="opt-ico">🧘</span><span><span class="opt-main">Me sentir enfin sereine</span><span class="opt-sub">Sans cette tension permanente</span></span></button>
-        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;clarte&#39;);finish()"><span class="opt-ico">💡</span><span><span class="opt-main">Voir clair sur ce que je veux</span><span class="opt-sub">Avoir une direction, un cap</span></span></button>
-        <button class="opt" onclick="sv(&#39;goal&#39;,&#39;connexion&#39;);finish()"><span class="opt-ico">💞</span><span><span class="opt-main">Sentir plus d'amour et de connexion</span><span class="opt-sub">Dans mes relations, ou avec moi-même</span></span></button>
+        <button class="opt" onclick="sv('goal','energie');finish()"><span class="opt-ico">⚡</span><span><span class="opt-main">Retrouver de l'énergie</span><span class="opt-sub">Ne plus me sentir à plat</span></span></button>
+        <button class="opt" onclick="sv('goal','affirmer');finish()"><span class="opt-ico">💬</span><span><span class="opt-main">M'affirmer et oser m'exprimer</span><span class="opt-sub">Dire ce que je pense, prendre ma place</span></span></button>
+        <button class="opt" onclick="sv('goal','sereine');finish()"><span class="opt-ico">🧘</span><span><span class="opt-main">Me sentir enfin sereine</span><span class="opt-sub">Sans cette tension permanente</span></span></button>
+        <button class="opt" onclick="sv('goal','clarte');finish()"><span class="opt-ico">💡</span><span><span class="opt-main">Voir clair sur ce que je veux</span><span class="opt-sub">Avoir une direction, un cap</span></span></button>
+        <button class="opt" onclick="sv('goal','connexion');finish()"><span class="opt-ico">💞</span><span><span class="opt-main">Sentir plus d'amour et de connexion</span><span class="opt-sub">Dans mes relations, ou avec moi-même</span></span></button>
       </div>
     </div>
   </div>
@@ -661,6 +698,16 @@ body::before{
     <div class="rcard gold"><p class="rlbl">06 · Tes 3 affirmations</p><div class="affs" id="r-affs"></div></div>
     <div class="rcard gold"><p class="rlbl">07 · Programme 7 jours</p><h2 class="rtitle" id="r-prog-t"></h2><div class="week" id="r-week"></div></div>
     <div class="rcard"><p class="rlbl">08 · Ta fiche signe complète</p><div id="r-fiche"></div></div>
+
+    <!-- BONUS FICHE -->
+    <div class="bonus-card">
+      <div class="bonus-tag">✦ Bonus offert avec ton diagnostic</div>
+      <h3 class="bonus-title">Ta fiche signe à imprimer</h3>
+      <p class="bonus-value">Normalement vendue séparément · <strong>Offerte avec ton rapport</strong></p>
+      <a id="btn-fiche" href="#" class="btn-dl" download target="_blank">
+        ↓ Télécharger ma fiche
+      </a>
+    </div>
 
     <div class="share-sec">
       <h3 class="share-h">Tu as aimé ton diagnostic ?</h3>
@@ -1051,6 +1098,28 @@ function buildResult(){
 
   // 08 fiche
   document.getElementById('r-fiche').innerHTML = ficheHTML(sign);
+  /* ── BONUS FICHE ── */
+  const FICHES = {
+    belier:     'https://drive.google.com/uc?export=download&id=1zDP-sBLQWegsfKxAfFs6RXD-ZU-VbRKO',
+    taureau:    'https://drive.google.com/uc?export=download&id=1PtxTvuGCKj35Fywcxv2wUF3T0Gb4rBWJ',
+    gemeaux:    'https://drive.google.com/uc?export=download&id=12Db1QyqpQ119qytbTYg6CwoQFUc64x0x',
+    cancer:     'https://drive.google.com/uc?export=download&id=1yOp7dEKsl8PxP2Zuxaa8b1ODhYHrjFTb',
+    lion:       'https://drive.google.com/uc?export=download&id=1CZJrdMBurAn3gdPO91h3DpmsSKrkezx3',
+    vierge:     'https://drive.google.com/uc?export=download&id=1IB4fGCmwrR6iAscE1CenvSpRmLjQONOp',
+    balance:    'https://drive.google.com/uc?export=download&id=12wbrYa-KeqJoGsc084tdH0rprK7dCavk',
+    scorpion:   'https://drive.google.com/uc?export=download&id=1Itb6tUZ0tFu_RqF4mi4tn8rOyCSj1_jl',
+    sagittaire: 'https://drive.google.com/uc?export=download&id=1tODmvZwJhsDrS1utVvp6-fuQOKcekCCJ',
+    capricorne: 'https://drive.google.com/uc?export=download&id=1GrjhyV4kPPMHC4PwfbrPW8JUcFBMpJu7',
+    verseau:    'https://drive.google.com/uc?export=download&id=1w2kFbuRaGnUrGpzkw99FtZ8ILjfyYQ_K',
+    poissons:   'https://drive.google.com/uc?export=download&id=1ino1YFcAaeXo2Z75VbSQYpKqi2NShSkx',
+  };
+  const ficheUrl = FICHES[sign] || FICHES.lion;
+  const btnFiche = document.getElementById('btn-fiche');
+  if(btnFiche){
+    btnFiche.href = ficheUrl;
+    btnFiche.textContent = `↓ Télécharger ma fiche ${sname}`;
+  }
+
 
   go('s-result');
 }
@@ -1086,18 +1155,18 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.qu
 <footer class="site-footer">
   <div class="footer-brand">AstroMoodBox</div>
   <nav class="footer-links">
-    <button class="footer-link" onclick="openM(&#39;ml&#39;)">Mentions légales</button>
-    <button class="footer-link" onclick="openM(&#39;pc&#39;)">Confidentialité</button>
-    <button class="footer-link" onclick="openM(&#39;cg&#39;)">CGV</button>
-    <button class="footer-link" onclick="openM(&#39;ct&#39;)">Contact</button>
+    <button class="footer-link" onclick="openM('ml')">Mentions légales</button>
+    <button class="footer-link" onclick="openM('pc')">Confidentialité</button>
+    <button class="footer-link" onclick="openM('cg')">CGV</button>
+    <button class="footer-link" onclick="openM('ct')">Contact</button>
   </nav>
-  <p class="footer-copy">© 2025 AstroMoodBox — Tous droits réservés</p>
+  <p class="footer-copy">© 2026 AstroMoodBox — Tous droits réservés</p>
 </footer>
 
 <!-- MODAL MENTIONS -->
 <div class="modal-overlay" id="ml">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeM(&#39;ml&#39;)">×</button>
+    <button class="modal-close" onclick="closeM('ml')">×</button>
     <p class="modal-tag">Informations légales</p>
     <h2 class="modal-title">Mentions légales</h2>
     <div class="modal-body">
@@ -1116,7 +1185,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.qu
 <!-- MODAL CONFIDENTIALITÉ -->
 <div class="modal-overlay" id="pc">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeM(&#39;pc&#39;)">×</button>
+    <button class="modal-close" onclick="closeM('pc')">×</button>
     <p class="modal-tag">Vos données</p>
     <h2 class="modal-title">Politique de confidentialité</h2>
     <div class="modal-body">
@@ -1133,7 +1202,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.qu
 <!-- MODAL CGV -->
 <div class="modal-overlay" id="cg">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeM(&#39;cg&#39;)">×</button>
+    <button class="modal-close" onclick="closeM('cg')">×</button>
     <p class="modal-tag">Conditions générales</p>
     <h2 class="modal-title">Conditions générales de vente</h2>
     <div class="modal-body">
@@ -1154,7 +1223,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.qu
 <!-- MODAL CONTACT -->
 <div class="modal-overlay" id="ct">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeM(&#39;ct&#39;)">×</button>
+    <button class="modal-close" onclick="closeM('ct')">×</button>
     <p class="modal-tag">Nous contacter</p>
     <h2 class="modal-title">Contact</h2>
     <div class="modal-body">
@@ -1169,6 +1238,5 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.qu
 </div>
 
 
-
-
-</body></html>
+</body>
+</html>
